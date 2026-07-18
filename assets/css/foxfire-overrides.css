@@ -9,14 +9,8 @@ header#header.transparent {
   z-index: 50;
 }
 
-/* The template's carousel darkens photos with an 85% scrim; our slides are
-   Illumination gradients and already carry their own contrast, so ease it back */
-.home-carousel .item .image .content {
-  background: rgba(11, 18, 42, .12);
-}
-
-/* Nav sits over the hero gradients on every homepage slide, not just a photo,
-   so it needs light text with a shadow rather than the template's dark default */
+/* Nav sits over the hero photo, not a light page background, so it needs light
+   text with a shadow rather than the template's dark default */
 header#header.transparent #menu-classic .menu-holder ul li > a {
   color: var(--starlight);
   text-shadow: 0 1px 3px rgba(11, 18, 42, .35);
@@ -35,6 +29,56 @@ header nav.navbar #logo a.navbar-brand img {
   height: 40px;
   width: auto;
   max-width: none;
+}
+
+/* Full-bleed static hero: logo over photography, no carousel */
+.hero-photo {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(11, 18, 42, .25), rgba(11, 18, 42, .55)), url(../img/hero-foxfire-wide.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 105px 24px 60px;
+}
+.hero-photo-inner {
+  max-width: 640px;
+}
+.hero-logo {
+  width: min(360px, 60vw);
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 6px 28px rgba(0, 0, 0, .45));
+}
+.hero-tagline {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--starlight);
+  margin: 0 0 14px;
+}
+.hero-eyebrow {
+  font-family: 'Figtree', sans-serif;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--moonbeam);
+  margin: 0 0 32px;
+}
+.hero-cta {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+a.btn-alt.small.ghost {
+  border-color: var(--starlight);
+  color: var(--starlight);
+}
+a.btn-alt.small.ghost:hover {
+  background-color: var(--starlight);
+  color: var(--nightfall) !important;
 }
 
 .class-card {
