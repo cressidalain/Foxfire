@@ -46,7 +46,8 @@ header nav.navbar #logo a.navbar-brand img {
 /* Full-bleed static hero: logo over photography, no carousel */
 .hero-photo {
   position: relative;
-  min-height: 100vh;
+  min-height: 640px;
+  height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +55,7 @@ header nav.navbar #logo a.navbar-brand img {
   background-image: linear-gradient(rgba(11, 18, 42, .25), rgba(11, 18, 42, .55)), url(../img/hero-foxfire-wide.jpg);
   background-size: cover;
   background-position: center;
-  padding: 105px 24px 60px;
+  padding: 105px 24px 40px;
 }
 .hero-photo-inner {
   max-width: 640px;
