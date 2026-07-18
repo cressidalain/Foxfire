@@ -1,0 +1,263 @@
+/* Foxfire — base stylesheet
+   Built from the Foxfire Color System v1.5 and Typography Specification v1.1 */
+
+:root{
+  /* Foundation palette */
+  --nightfall:#0B122A;
+  --midpine:#004E4B;
+  --astral:#287790;
+  --afterglow:#C4673D;
+  --firefly:#FBFFBF;
+  --moonbeam:#D1DEFF;
+  --starlight:#FFFEF5;
+
+  /* Supporting palette used by the type spec's examples */
+  --tw1:#2E364B;
+  --tw2:#575E6E;
+  --tw3:#858A94;
+  --tw4:#B7BABC;
+  --tw5:#D3D3CE;
+  --mr4:#A8B5D5;
+  --gh2:#9B502E;
+
+  --measure: 64ch;
+}
+
+*, *::before, *::after{ box-sizing:border-box }
+
+html{ scroll-behavior:smooth }
+
+body{
+  margin:0;
+  background:var(--starlight);
+  color:var(--nightfall);
+  font-family:'Figtree', system-ui, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; display:block }
+
+a{ color:inherit }
+
+.btn{
+  font-family:'Figtree', sans-serif;
+  font-weight:500;
+  font-size:15px;
+  padding:11px 22px;
+  border-radius:8px;
+  border:1.5px solid transparent;
+  display:inline-block;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn.primary{ background:var(--astral); color:var(--starlight) }
+.btn.primary:hover{ background:#225C79 } /* Nocturnal 3 — one step darker, same family */
+.btn.ghost{ background:transparent; color:var(--nightfall); border-color:var(--nightfall) }
+.btn.ghost:hover{ background:rgba(11,18,42,.06) }
+.btn-row{ display:flex; gap:12px; flex-wrap:wrap }
+
+/* ---------- Header / nav ---------- */
+
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px clamp(20px,4vw,48px);
+  border-bottom:1px solid rgba(11,18,42,.08);
+}
+
+.logo-fpo{
+  width:120px;
+  height:44px;
+  border:1.5px dashed var(--tw4);
+  border-radius:8px;
+  color:var(--tw3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:600;
+  text-align:center;
+  padding:6px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  font-size:14px;
+  font-weight:500;
+  text-decoration:none;
+  color:var(--nightfall);
+}
+.nav-links a:hover{ color:var(--astral) }
+.nav-links .btn{ padding:8px 16px; font-size:14px }
+
+/* ---------- Hero (Moonrise Illumination gradient) ---------- */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%);
+  padding:clamp(56px,10vw,110px) clamp(20px,5vw,48px);
+}
+.hero-inner{
+  max-width:720px;
+  margin:0 auto;
+  text-align:center;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--mr4);
+  font-weight:600;
+  margin:0 0 14px;
+}
+.hero h1{
+  font-family:'Rosarivo', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(32px,5.5vw,48px);
+  line-height:1.14;
+  color:var(--starlight);
+  max-width:16ch;
+  margin:0 auto 18px;
+}
+.hero .lede{
+  font-size:clamp(16px,2vw,18px);
+  line-height:1.55;
+  color:rgba(255,254,245,.86);
+  max-width:48ch;
+  margin:0 auto 28px;
+}
+.hero .btn-row{ justify-content:center }
+
+/* ---------- Info band ---------- */
+
+.info-band{
+  border-top:1px solid rgba(11,18,42,.07);
+  background:#fcfbf3;
+  padding:clamp(36px,6vw,56px) clamp(20px,5vw,48px);
+}
+.info-band-inner{ max-width:900px; margin:0 auto }
+.info-band h2{
+  font-family:'Rosarivo', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(24px,3.5vw,30px);
+  margin:0 0 12px;
+}
+.info-band p{ font-size:15px; max-width:var(--measure); margin:0 0 20px }
+
+.meta-row{
+  display:flex;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.meta .lbl{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--tw1);
+  display:block;
+  margin-bottom:3px;
+}
+.meta .val{ font-size:15px; font-weight:500 }
+
+/* ---------- About / editorial blurb ---------- */
+
+.about{
+  padding:clamp(40px,7vw,64px) clamp(20px,5vw,48px);
+}
+.about-inner{ max-width:640px; margin:0 auto }
+.about h2{
+  font-family:'Rosarivo', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(24px,3.5vw,30px);
+  margin:0 0 18px;
+}
+.about p{
+  font-family:'Crimson Text', Georgia, serif;
+  font-size:19px;
+  line-height:1.65;
+  margin:0 0 16px;
+}
+
+/* ---------- Class preview cards ---------- */
+
+.classes{
+  padding:clamp(40px,7vw,64px) clamp(20px,5vw,48px);
+  background:#fcfbf3;
+  border-top:1px solid rgba(11,18,42,.07);
+}
+.classes-inner{ max-width:1000px; margin:0 auto }
+.classes h2{
+  font-family:'Rosarivo', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(24px,3.5vw,30px);
+  margin:0 0 24px;
+}
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:16px;
+}
+.card{
+  background:var(--starlight);
+  border:1px solid rgba(11,18,42,.1);
+  border-radius:12px;
+  padding:22px 24px;
+}
+.card h3{
+  font-size:17px;
+  font-weight:600;
+  margin:0 0 8px;
+}
+.card p{
+  font-size:14px;
+  color:var(--tw2);
+  margin:0;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer{
+  padding:32px clamp(20px,5vw,48px) 48px;
+  border-top:2px solid var(--nightfall);
+}
+.footer-inner{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.site-footer p{
+  font-size:12.5px;
+  color:var(--tw2);
+  margin:0;
+}
+.footer-links{ display:flex; gap:20px }
+.footer-links a{
+  font-size:12.5px;
+  font-weight:500;
+  text-decoration:none;
+  color:var(--tw2);
+}
+.footer-links a:hover{ color:var(--astral) }
+
+@media (max-width:640px){
+  .site-header{ flex-wrap:wrap }
+  .meta-row{ gap:20px }
+  .footer-inner{ flex-direction:column; align-items:flex-start }
+}
