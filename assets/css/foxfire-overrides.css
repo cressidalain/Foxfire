@@ -1,0 +1,55 @@
+/* Foxfire — page-specific additions on top of the recolored Dolomia base */
+
+/* Let the header float over the hero carousel instead of pushing it down */
+header#header.transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+/* The template's carousel darkens photos with an 85% scrim; our slides are
+   Illumination gradients and already carry their own contrast, so ease it back */
+.home-carousel .item .image .content {
+  background: rgba(11, 18, 42, .12);
+}
+
+/* Nav sits over the hero gradients on every homepage slide, not just a photo,
+   so it needs light text with a shadow rather than the template's dark default */
+header#header.transparent #menu-classic .menu-holder ul li > a {
+  color: var(--starlight);
+  text-shadow: 0 1px 3px rgba(11, 18, 42, .35);
+}
+header#header.transparent #menu-classic .menu-holder ul li > a.active-item {
+  color: var(--afterglow);
+}
+header#header.transparent #menu-responsive-classic .menu-button .bar {
+  background-color: var(--starlight);
+  box-shadow: 0 1px 3px rgba(11, 18, 42, .35);
+}
+
+/* The Foxfire logo SVGs carry only a viewBox (no intrinsic width/height), which
+   the template's width:auto/max-height:40px combo fails to resolve to a visible size */
+header nav.navbar #logo a.navbar-brand img {
+  height: 40px;
+  width: auto;
+  max-width: none;
+}
+
+.class-card {
+  background: var(--starlight);
+  border: 1px solid rgba(11, 18, 42, .1);
+  border-radius: 12px;
+  padding: 28px 30px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+.class-card h3 {
+  margin-bottom: 10px;
+}
+.class-card p {
+  color: var(--twilight-2);
+  font-size: 15px;
+  line-height: 1.6;
+}

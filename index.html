@@ -1,89 +1,309 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Foxfire Homeschool Cooperative</title>
-<meta name="description" content="Foxfire is a secular homeschool cooperative in Newtown, CT — member-taught classes, shared on Wednesdays, in the woods north of town.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Figtree:wght@400;500;600;700&family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Foxfire Homeschool Cooperative</title>
+    <meta name="description" content="Foxfire is a secular homeschool cooperative in Newtown, CT — member-taught classes, shared on Wednesdays, in the woods north of town.">
+    <link rel="icon" href="assets/img/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/css/puredesign.css">
+
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="assets/css/flexslider.css">
+
+    <!-- Owl -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="assets/css/jquery.fullPage.css">
+
+    <link rel="stylesheet" href="assets/css/foxfire-overrides.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="logo-fpo">FPO · Logo</div>
-  <nav class="nav-links">
-    <a href="#classes">Classes</a>
-    <a href="#calendar">Calendar</a>
-    <a href="#families">Our Families</a>
-    <a href="#enroll" class="btn primary">Enroll</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">A secular homeschool cooperative · Newtown, CT</p>
-    <h1>The forest keeps its own light</h1>
-    <p class="lede">Member-taught classes, shared on Wednesdays, in the woods north of town.</p>
-    <div class="btn-row">
-      <a href="#enroll" class="btn primary">Enroll for spring</a>
-      <a href="#classes" class="btn ghost" style="border-color:var(--starlight); color:var(--starlight)">See the class list</a>
+    <!--  loader  -->
+    <div id="myloader">
+        <span class="loader">
+                <div class="inner-loader"></div>
+            </span>
     </div>
-  </div>
-</section>
 
-<section class="info-band">
-  <div class="info-band-inner">
-    <h2>Spring session opens March 1</h2>
-    <p>Twelve member-taught classes across science, art history, and writing. Families register per class; siblings share Wednesdays on one campus.</p>
-    <div class="meta-row">
-      <div class="meta"><span class="lbl">Registration</span><span class="val">March 1 – 15</span></div>
-      <div class="meta"><span class="lbl">Classes begin</span><span class="val">April 2</span></div>
-      <div class="meta"><span class="lbl">Location</span><span class="val">North pasture campus</span></div>
+    <!--  Main Wrap  -->
+    <div id="main-wrap" class="full-width">
+        <!--  Header & Menu  -->
+        <header id="header" class="full-width transparent">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <!--  Header Logo  -->
+                    <div id="logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/foxfire-logo-dark.svg" class="normal" alt="Foxfire Homeschool Cooperative">
+                            <img src="assets/img/foxfire-logo-dark.svg" class="retina" alt="Foxfire Homeschool Cooperative">
+                        </a>
+                    </div>
+                    <!--  END Header Logo  -->
+                    <!--  Classic menu, responsive menu classic  -->
+                    <div id="menu-classic">
+                        <div class="menu-holder">
+                            <ul>
+                                <li>
+                                    <a href="index.html" class="active-item">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#classes">Classes</a>
+                                </li>
+                                <li>
+                                    <a href="#calendar">Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#families">Our Families</a>
+                                </li>
+                                <li>
+                                    <a href="#enroll">Enroll</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  END Classic menu, responsive menu classic  -->
+                    <!--  Button for Responsive Menu Classic  -->
+                    <div id="menu-responsive-classic">
+                        <div class="menu-button">
+                            <span class="bar bar-1"></span>
+                            <span class="bar bar-2"></span>
+                            <span class="bar bar-3"></span>
+                        </div>
+                    </div>
+                    <!--  END Button for Responsive Menu Classic  -->
+                </nav>
+            </div>
+        </header>
+        <!--  END Header & Menu  -->
+
+        <!--  Page Content, class footer-fixed if footer is fixed  -->
+        <div id="page-content" class="padding-onlybottom-sm">
+            <!--  Slider  -->
+            <div class="home-carousel">
+                <!--  Single Item — Nocturnal: Nightfall → Astral Deep  -->
+                <div class="item">
+                    <div class="image" style="background-image:linear-gradient(90deg, #0B122A 0%, #162B47 28%, #1D4361 52%, #225C79 76%, #287790 100%)">
+                        <div class="content text-center">
+                            <div class="content-top">
+                                <p class="heading center white grey-light margin-bottom-extrasmall">A secular homeschool cooperative &middot; Newtown, CT</p>
+                                <h2 class="margin-bottom-null title line center white">The forest keeps its own light</h2>
+                                <p class="heading center white grey-light margin-bottom">Member-taught classes, shared on Wednesdays, in the woods north of town.</p>
+                            </div>
+                            <div class="content-bottom">
+                                <a href="#enroll" class="btn-alt small shadow">Enroll for spring</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  END Single Item  -->
+                <!--  Moonrise: Nightfall → Moonbeam  -->
+                <div class="item">
+                    <div class="image" style="background-image:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%)">
+                        <div class="content text-center">
+                            <div class="content-top">
+                                <p class="heading center white grey-light margin-bottom-extrasmall">Spring session opens March 1</p>
+                                <h2 class="margin-bottom-null title line center white">Twelve classes, one Wednesday campus</h2>
+                                <p class="heading center white grey-light margin-bottom">Science, art history, and writing &mdash; taught by member families, shared by every family's kids.</p>
+                            </div>
+                            <div class="content-bottom">
+                                <a href="#classes" class="btn-alt small shadow">See the class list</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Foxfire: Astral Deep → Firefly  -->
+                <div class="item">
+                    <div class="image" style="background-image:linear-gradient(90deg, #287790 0%, #62ADC1 33%, #75CDDA 66%, #FBFFBF 100%)">
+                        <div class="content text-center">
+                            <div class="content-top">
+                                <p class="heading center margin-bottom-extrasmall" style="color:#0B122A">Our approach</p>
+                                <h2 class="margin-bottom-null title line center" style="color:#0B122A">Every family teaches, every family learns</h2>
+                                <p class="heading center margin-bottom" style="color:#0B122A">No hired staff, no set curriculum &mdash; just neighbors sharing what they know.</p>
+                            </div>
+                            <div class="content-bottom">
+                                <a href="#families" class="btn-alt small shadow">Meet our families</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Golden Hour: Ember → Afterglow  -->
+                <div class="item">
+                    <div class="image" style="background-image:linear-gradient(90deg, #61301A 0%, #9B502E 48%, #C4673D 100%)">
+                        <div class="content text-center">
+                            <div class="content-top">
+                                <p class="heading center white grey-light margin-bottom-extrasmall">Registration &middot; March 1&ndash;15</p>
+                                <h2 class="margin-bottom-null title line center white">Ready to join us?</h2>
+                                <p class="heading center white grey-light margin-bottom">Classes begin April 2 at the north pasture campus.</p>
+                            </div>
+                            <div class="content-bottom">
+                                <a href="#enroll" class="btn-alt small shadow">Start enrollment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  About  -->
+            <section id="about" class="padding-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <h6 class="margin-bottom-small">What Foxfire is</h6>
+                            <p class="lead">Foxfire is the old Appalachian name for the glow of certain fungi on fallen wood &mdash; faint, patient, and visible only to those who walk at night.</p>
+                            <p>Every course at Foxfire is taught by a member family and shaped by the students in the room. We meet weekly, we teach each other, and we let the kids set the pace.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--  Classes  -->
+            <section id="classes" class="padding-lg" style="background-color:#FCFBF3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center margin-bottom">
+                            <h6 class="margin-bottom-small">Spring session</h6>
+                            <h2>A few classes this spring</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="class-card">
+                                <h3>Forest Ecology</h3>
+                                <p>Weekly field study of the north pasture woods, tracking seasonal change firsthand.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="class-card">
+                                <h3>Art History Workshop</h3>
+                                <p>From cave painting to collage &mdash; a hands-on survey with a project every week.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="class-card">
+                                <h3>Young Writers' Circle</h3>
+                                <p>A peer workshop for students building their first short stories and essays.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--  END Page Content, class footer-fixed if footer is fixed  -->
+
+        <!--  Footer. Class fixed for fixed footer  -->
+        <footer class="full-width">
+            <div class="container">
+                <div class="row no-margin">
+                    <div class="col-sm-4 col-md-2 padding-leftright-null">
+                        <h6 class="heading white margin-bottom-extrasmall">Foxfire</h6>
+                        <ul class="sitemap">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#classes">Classes</a></li>
+                            <li><a href="#calendar">Calendar</a></li>
+                            <li><a href="#families">Our Families</a></li>
+                            <li><a href="#enroll">Enroll</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-2 padding-leftright-null">
+                        <h6 class="heading white margin-bottom-extrasmall">Useful Links</h6>
+                        <ul class="useful-links">
+                            <li><a href="#">Member Handbook</a></li>
+                            <li><a href="#">Volunteer</a></li>
+                            <li><a href="#">Code of Conduct</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-4 padding-leftright-null">
+                        <h6 class="heading white margin-bottom-extrasmall">Contact Us</h6>
+                        <ul class="info">
+                            <li>Mail <a href="mailto:hello@foxfirecoop.org">hello@foxfirecoop.org</a></li>
+                            <li>We meet <span class="white">Wednesdays, 8:30am&ndash;3pm</span></li>
+                            <li><a href="#">North Pasture Campus<br>
+                                    Newtown, CT</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 padding-leftright-null">
+                        <h6 class="heading white margin-bottom-extrasmall">Stay in the loop</h6>
+                        <p class="grey-light">Sign up for the Foxfire newsletter to hear about spring registration, open houses, and co-op news.</p>
+                        <div id="newsletter-form" class="padding-onlytop-xs">
+                            <form class="search-form" method="post" action="#">
+                                <div class="form-input">
+                                    <input type="text" id="email" name="email" placeholder="Your email ID" value="" />
+                                    <span class="form-button">
+                                            <input type="submit" name="submit" value="Sign Up" />
+                                        </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy">
+                    <div class="row no-margin">
+                        <div class="col-md-8 padding-leftright-null">
+                            &copy; 2026 Foxfire Homeschool Cooperative
+                        </div>
+                        <div class="col-md-4 padding-leftright-null">
+                            <ul class="social">
+                                <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--  END Footer. Class fixed for fixed footer  -->
     </div>
-  </div>
-</section>
+    <!--  Main Wrap  -->
 
-<section class="about">
-  <div class="about-inner">
-    <h2>What Foxfire is</h2>
-    <p>Foxfire is the old Appalachian name for the glow of certain fungi on fallen wood — faint, patient, and visible only to those who walk at night.</p>
-    <p>Every course at Foxfire is taught by a member family and shaped by the students in the room. We meet weekly, we teach each other, and we let the kids set the pace.</p>
-  </div>
-</section>
-
-<section class="classes" id="classes">
-  <div class="classes-inner">
-    <h2>A few classes this spring</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Forest Ecology</h3>
-        <p>Weekly field study of the north pasture woods, tracking seasonal change firsthand.</p>
-      </div>
-      <div class="card">
-        <h3>Art History Workshop</h3>
-        <p>From cave painting to collage — a hands-on survey with a project every week.</p>
-      </div>
-      <div class="card">
-        <h3>Young Writers' Circle</h3>
-        <p>A peer workshop for students building their first short stories and essays.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>&copy; 2026 Foxfire Homeschool Cooperative</p>
-    <div class="footer-links">
-      <a href="#families">Our Families</a>
-      <a href="#calendar">Calendar</a>
-      <a href="#enroll">Enroll</a>
-    </div>
-  </div>
-</footer>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- All js library -->
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.flexslider-min.js"></script>
+    <script src="assets/js/jquery.fullPage.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/smooth.scroll.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.countTo.js"></script>
+    <script src="assets/js/jquery.scrolly.js"></script>
+    <script src="assets/js/plugins-scroll.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="assets/js/pace.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
