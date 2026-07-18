@@ -1,5 +1,17 @@
 /* Foxfire — page-specific additions on top of the recolored Dolomia base */
 
+/* Paper textures in place of flat color, repeating so any page length is covered */
+body {
+  background-image: url(../img/starlight-paper-bg.jpg);
+  background-repeat: repeat;
+}
+footer,
+.footer {
+  background-color: var(--nightfall);
+  background-image: url(../img/nightfall-paper-bg.jpg);
+  background-repeat: repeat;
+}
+
 /* Let the header float over the hero carousel instead of pushing it down */
 header#header.transparent {
   position: absolute;
