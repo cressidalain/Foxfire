@@ -43,7 +43,10 @@ header nav.navbar #logo a.navbar-brand img {
   max-width: none;
 }
 
-/* Full-bleed static hero: logo over photography, no carousel */
+/* Full-bleed static hero: logo over photography, no carousel.
+   #main-wrap carries a permanent 50px side padding that only the footer's own
+   CSS was built to break out of (footer:not(.fixed) gets -50px margins) — the
+   hero needs the same escape or it sits inset with white gutters on both sides. */
 .hero-photo {
   position: relative;
   min-height: 640px;
@@ -56,6 +59,8 @@ header nav.navbar #logo a.navbar-brand img {
   background-size: cover;
   background-position: center;
   padding: 105px 24px 40px;
+  margin-left: -50px;
+  margin-right: -50px;
 }
 .hero-photo-inner {
   max-width: 640px;
