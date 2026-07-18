@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foxfire · Color System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0B122A;--pine:#004E4B;--tealblue:#287790;--copper:#C4673D;--cream:#FFFEF5}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Archivo',sans-serif;padding:52px clamp(20px,5vw,72px) 90px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto}
+  .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--tealblue);font-weight:600;margin:0 0 10px}
+  .intro{font-size:13.5px;line-height:1.6;color:rgba(11,18,42,.75);margin:0 0 30px;max-width:660px}
+  .plabel{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--tealblue);font-weight:600;margin:0 0 10px}
+  .pstrip{display:flex;gap:6px;margin-bottom:10px}
+  .psw{flex:1}
+  .pfill{height:44px;border-radius:5px;position:relative;border:1px solid rgba(11,18,42,.07)}
+  .pfill span{position:absolute;left:6px;bottom:4px;font-size:8px;letter-spacing:.05em}
+  .pname{font-size:9px;letter-spacing:.06em;color:rgba(11,18,42,.6);margin-top:4px}
+  .pstory{font-size:12.5px;line-height:1.6;color:rgba(11,18,42,.65);margin:0 0 8px;max-width:660px;font-style:italic}
+  .sl-light{color:rgba(255,254,245,.85)} .sl-dark{color:rgba(11,18,42,.6)}
+  .fam{padding:38px 0 34px;border-top:1px solid rgba(40,119,144,.28)}
+  .fam-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .fam-name{font-size:15px;font-weight:700;letter-spacing:.02em}
+  .fam-tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tealblue);font-weight:600}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}
+  .swatch{flex:1;min-width:112px}
+  .swatch.anchor{flex:.72;min-width:92px}
+  .swatch.anchor .fill{outline:2px solid var(--copper);outline-offset:2px}
+  .swatch.anchor .sname em{font-style:normal;font-weight:500;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-left:4px}
+  .fill{height:78px;border-radius:6px;position:relative;border:1px solid rgba(11,18,42,.07)}
+  .fill span{position:absolute;left:8px;bottom:6px;font-size:9.5px;letter-spacing:.05em;font-weight:500}
+  .sname{font-size:11.5px;font-weight:600;margin:9px 0 5px}
+  .chips{display:flex;gap:5px;flex-wrap:wrap}
+  .chip{font-size:9px;letter-spacing:.06em;padding:2px 7px;border-radius:20px;border:1px solid rgba(11,18,42,.16);color:rgba(11,18,42,.62)}
+  .chip.pass{border-color:rgba(0,78,75,.45);color:var(--pine);font-weight:600}
+  .chip.half{border-color:rgba(40,119,144,.4);color:var(--tealblue)}
+  .stops{margin:18px 0 0;font-size:11px;letter-spacing:.03em;color:rgba(11,18,42,.62);max-width:680px;line-height:1.6}
+  .stops b{font-weight:600;color:var(--tealblue);text-transform:uppercase;font-size:9.5px;letter-spacing:.12em}
+  .bands{margin:18px 0 0}
+  .bandwrap{border-radius:8px;padding:20px 24px;margin-bottom:10px}
+  .bandwrap.sl{background:#FFFEF5;border:1px solid rgba(11,18,42,.08)}
+  .bandwrap.nf{background:#0B122A}
+  .band{height:44px;border-radius:5px}
+  .bandnote{font-size:10.5px;color:rgba(11,18,42,.6);margin:2px 0 0;letter-spacing:.03em;max-width:680px;line-height:1.6}
+  .job{margin:14px 0 0;font-size:13px;line-height:1.55;color:rgba(11,18,42,.75);max-width:660px}
+  .rules{margin-top:44px;padding-top:32px;border-top:1px solid rgba(40,119,144,.28)}
+  .rules h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--tealblue);margin:0 0 18px}
+  .rules p{font-size:13.5px;line-height:1.65;color:rgba(11,18,42,.8);margin:0 0 13px;max-width:680px}
+  .rules b{font-weight:600}
+  .principle{margin-top:40px;padding:18px 22px;border-left:3px solid var(--copper);font-size:13.5px;line-height:1.6;color:rgba(11,18,42,.85);max-width:660px}
+</style></head><body><div class="wrap">
+
+  <p class="eyebrow">Foxfire Homeschool Cooperative · Color System · Spec v1.5</p>
+  <p class="intro">Three tiers: the Foundation seven, the Supporting Palette below, and a Working Set for volunteers. Families are the source of truth... each Illumination gradient is its family rendered continuously, shown here on every ground it passes. A gradient earns a ground when at least 75% of its length holds 1.5:1 against it; stops equal to the ground read as intentional bleed. Numbered steps are secondaries; step 1 is always the darkest. Copper-ringed anchors are Foundation colors appearing inside their families as destinations, with the same contrast chips as every step. Chips show WCAG ratios against Starlight and Nightfall; ✓ passes 4.5:1 for text, ◐ passes 3:1 for large or display type only.</p>
+
+  <p class="plabel">Foundation palette · the seven stay primary</p>
+  <div class="pstrip"><div class="psw"><div class="pfill" style="background:#0B122A"><span class="sl-light">0B122A</span></div><div class="pname">Nightfall</div></div><div class="psw"><div class="pfill" style="background:#004E4B"><span class="sl-light">004E4B</span></div><div class="pname">Midnight Pine</div></div><div class="psw"><div class="pfill" style="background:#287790"><span class="sl-light">287790</span></div><div class="pname">Astral Deep</div></div><div class="psw"><div class="pfill" style="background:#C4673D"><span class="sl-dark">C4673D</span></div><div class="pname">Afterglow</div></div><div class="psw"><div class="pfill" style="background:#FBFFBF"><span class="sl-dark">FBFFBF</span></div><div class="pname">Firefly</div></div><div class="psw"><div class="pfill" style="background:#D1DEFF"><span class="sl-dark">D1DEFF</span></div><div class="pname">Moonbeam</div></div><div class="psw"><div class="pfill" style="background:#FFFEF5"><span class="sl-dark">FFFEF5</span></div><div class="pname">Starlight</div></div></div>
+  <p class="pstory">The Foundation palette follows the progression of an evening outdoors. Each color is a distinct moment in the transition from daylight to darkness, from the first deepening sky to the final glow of stars. The names describe experiences, not pigments.</p>
+
+  
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Nocturnal</span><span class="fam-tag">Nightfall → Astral Deep · OKLCH</span></div>
+    <div class="row"><div class="swatch anchor">
+      <div class="fill" style="background:#0B122A"><span class="sl-light">#0B122A</span></div>
+      <div class="sname">Nightfall <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Starlight 18.29 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#162B47"><span class="sl-light">#162B47</span></div>
+      <div class="sname">Nocturnal 1</div>
+      <div class="chips"><span class="chip pass">Starlight 14.11 ✓</span><span class="chip no">Nightfall 1.3</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#1D4361"><span class="sl-light">#1D4361</span></div>
+      <div class="sname">Nocturnal 2</div>
+      <div class="chips"><span class="chip pass">Starlight 10.23 ✓</span><span class="chip no">Nightfall 1.79</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#225C79"><span class="sl-light">#225C79</span></div>
+      <div class="sname">Nocturnal 3</div>
+      <div class="chips"><span class="chip pass">Starlight 7.22 ✓</span><span class="chip no">Nightfall 2.53</span></div>
+    </div>
+<div class="swatch anchor">
+      <div class="fill" style="background:#287790"><span class="sl-light">#287790</span></div>
+      <div class="sname">Astral Deep <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Starlight 5.02 ✓</span><span class="chip half">Nightfall 3.64 ◐</span></div>
+    </div></div>
+    <p class="stops"><b>Illumination recipe</b> · 0% Nightfall · 28% #162B47 · 52% #1D4361 · 76% #225C79 · 100% Astral Deep</p>
+    <div class="bands"><div class="bandwrap sl"><div class="band" style="background:linear-gradient(90deg, #0B122A 0%, #162B47 28%, #1D4361 52%, #225C79 76%, #287790 100%)"></div></div><p class="bandnote">Ground test · Starlight 100% pass · Nightfall 61% fail · Nightfall band withheld. Nightfall band withheld: 61% coverage. On Starlight, the Nightfall start bleeds into nothing... full edge.</p></div>
+    <p class="job">Dark grounds between Nightfall and Astral Deep: dark-mode sections, night-scene illustration, hover states for Astral Deep elements. All three steps hold Starlight text.</p>
+  </section>
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Moonrise</span><span class="fam-tag">Nightfall → Moonbeam · OKLCH</span></div>
+    <div class="row"><div class="swatch anchor">
+      <div class="fill" style="background:#0B122A"><span class="sl-light">#0B122A</span></div>
+      <div class="sname">Nightfall <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Starlight 18.29 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#2F3954"><span class="sl-light">#2F3954</span></div>
+      <div class="sname">Moonrise 1</div>
+      <div class="chips"><span class="chip pass">Starlight 11.31 ✓</span><span class="chip no">Nightfall 1.62</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#555F7C"><span class="sl-light">#555F7C</span></div>
+      <div class="sname">Moonrise 2</div>
+      <div class="chips"><span class="chip pass">Starlight 6.26 ✓</span><span class="chip no">Nightfall 2.92</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#7D89A8"><span class="sl-dark">#7D89A8</span></div>
+      <div class="sname">Moonrise 3</div>
+      <div class="chips"><span class="chip half">Starlight 3.45 ◐</span><span class="chip pass">Nightfall 5.3 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#A8B5D5"><span class="sl-dark">#A8B5D5</span></div>
+      <div class="sname">Moonrise 4</div>
+      <div class="chips"><span class="chip no">Starlight 2.03</span><span class="chip pass">Nightfall 9.02 ✓</span></div>
+    </div>
+<div class="swatch anchor">
+      <div class="fill" style="background:#D1DEFF"><span class="sl-dark">#D1DEFF</span></div>
+      <div class="sname">Moonbeam <em>primary</em></div>
+      <div class="chips"><span class="chip no">Starlight 1.33</span><span class="chip pass">Nightfall 13.76 ✓</span></div>
+    </div></div>
+    <p class="stops"><b>Illumination recipe</b> · 0% Nightfall · 22% #2F3954 · 42% #555F7C · 62% #7D89A8 · 82% #A8B5D5 · 100% Moonbeam</p>
+    <div class="bands"><div class="bandwrap sl"><div class="band" style="background:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%)"></div></div><div class="bandwrap nf"><div class="band" style="background:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%)"></div></div><p class="bandnote">Ground test · Starlight 94% pass · Nightfall 81% pass. On Nightfall the start bleeds into the ground by design... moonlight emerging from the dark.</p></div>
+    <p class="job">The quiet blue-violets rising toward Moonbeam. Steps 1 and 2 set display or eyebrow text on Starlight; steps 3 and 4 live on Nightfall grounds. Step 4 stops a full stratum short of Moonbeam, which stays the signature.</p>
+  </section>
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Foxfire</span><span class="fam-tag">Astral Deep → Firefly · hue held, lightness climbs, chroma ignites at step 5</span></div>
+    <div class="row"><div class="swatch anchor">
+      <div class="fill" style="background:#287790"><span class="sl-light">#287790</span></div>
+      <div class="sname">Astral Deep <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Starlight 5.02 ✓</span><span class="chip half">Nightfall 3.64 ◐</span></div>
+    </div>
+
+<div class="swatch">
+      <div class="fill" style="background:#62AEC1"><span class="sl-dark">#62adc1</span></div>
+      <div class="sname">Foxfire1</div>
+      <div class="chips"><span class="chip no">Starlight 2.49</span><span class="chip pass">Nightfall 7.36 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#75cdda"><span class="sl-dark">#75cdda</span></div>
+      <div class="sname">Foxfire 2</div>
+      <div class="chips"><span class="chip no">Starlight 1.86</span><span class="chip pass">Nightfall 9.85 ✓</span></div>
+    </div>
+<div class="swatch anchor">
+      <div class="fill" style="background:#FBFFBF"><span class="sl-dark">#FBFFBF</span></div>
+      <div class="sname">Firefly <em>primary</em></div>
+      <div class="chips"><span class="chip no">Starlight 1.03</span><span class="chip pass">Nightfall 17.77 ✓</span></div>
+    </div></div>
+    <p class="stops"><b>Illumination recipe</b> · 0% Astral Deep · 20% #4496AC · 40% #62AEC1 · 58% #82C8D5 · 76% #94D4DC · 90% #4EEEF0 · 100% Firefly</p>
+    <div class="bands"><div class="bandwrap sl"><div class="band" style="background:linear-gradient(90deg, #287790 0%, #62adc1 33%, #75cdda 66%, #FBFFBF 100%)"></div></div><div class="bandwrap nf"><div class="band" style="background:linear-gradient(90deg, #287790 0%, #62adc1 33%, #75cdda 66%, #FBFFBF 100%)"></div></div><p class="bandnote">Ground test · Starlight 84% pass · Nightfall 100% pass. On Starlight the Firefly end bleeds into the paper by design... the glow becomes the page light.</p></div>
+    <p class="job">The signature ramp, built to behave like bioluminescence: Astral Deep holds its blue while lightness climbs through step 4, then step 5 ignites as a saturation event in cold hue... emission is saturated cyan against paler water. Yellow arrives only inside the final segment; the glow onset sits at 94% of the gradient. Steps 1–4 are cold-water grounds and illustration fills, never text on Starlight. Step 5 and Firefly are emission.</p>
+  </section>
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Golden Hour</span><span class="fam-tag">Afterglow shaded toward ink, tinted toward Starlight</span></div>
+    <div class="row"><div class="swatch">
+      <div class="fill" style="background:#61301A"><span class="sl-light">#61301A</span></div>
+      <div class="sname">Golden Hour 1</div>
+      <div class="chips"><span class="chip pass">Starlight 10.66 ✓</span><span class="chip no">Nightfall 1.72</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#9B502E"><span class="sl-light">#9B502E</span></div>
+      <div class="sname">Golden Hour 2</div>
+      <div class="chips"><span class="chip pass">Starlight 5.79 ✓</span><span class="chip half">Nightfall 3.16 ◐</span></div>
+    </div>
+<div class="swatch anchor">
+      <div class="fill" style="background:#C4673D"><span class="sl-dark">#C4673D</span></div>
+      <div class="sname">Afterglow <em>primary</em></div>
+      <div class="chips"><span class="chip half">Starlight 3.87 ◐</span><span class="chip pass">Nightfall 4.72 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#D8AC7D"><span class="sl-dark">#D8AC7D</span></div>
+      <div class="sname">Golden Hour 3</div>
+      <div class="chips"><span class="chip no">Starlight 2.05</span><span class="chip pass">Nightfall 8.92 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#E2D1AC"><span class="sl-dark">#E2D1AC</span></div>
+      <div class="sname">Golden Hour 4</div>
+      <div class="chips"><span class="chip no">Starlight 1.49</span><span class="chip pass">Nightfall 12.3 ✓</span></div>
+    </div></div>
+    <p class="stops"><b>Illumination recipe</b> · 0% #61301A · 48% #9B502E · 100% Afterglow — shade side only; steps 3–4 are flat use, never in the gradient</p>
+    <div class="bands"><div class="bandwrap sl"><div class="band" style="background:linear-gradient(90deg, #61301A 0%, #9B502E 28%, #C4673D 52%, #D8AC7D 76%, #E2D1AC 100%)"></div></div><div class="bandwrap nf"><div class="band" style="background:linear-gradient(90deg, #61301A 0%, #9B502E 48%, #C4673D 100%)"></div></div><p class="bandnote">Ground test · Starlight 100% pass · Nightfall 100% pass.</p></div>
+    <p class="job">The Afterglow ladder. Steps 1 and 2 are the text-safe warmth the Foundation palette lacks. Steps 3 and 4 are warm paper for flyers and inserts, deep enough to survive a printer. Afterglow itself stays display-size on Starlight.</p>
+  </section>
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Twilight</span><span class="fam-tag">Nightfall → Starlight in OKLab, chroma collapsed</span></div>
+    <div class="row"><div class="swatch anchor">
+      <div class="fill" style="background:#0B122A"><span class="sl-light">#0B122A</span></div>
+      <div class="sname">Nightfall <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Starlight 18.29 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#2E364B"><span class="sl-light">#2E364B</span></div>
+      <div class="sname">Twilight 1</div>
+      <div class="chips"><span class="chip pass">Starlight 11.89 ✓</span><span class="chip no">Nightfall 1.54</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#575E6E"><span class="sl-light">#575E6E</span></div>
+      <div class="sname">Twilight 2</div>
+      <div class="chips"><span class="chip pass">Starlight 6.42 ✓</span><span class="chip no">Nightfall 2.85</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#858A94"><span class="sl-dark">#858A94</span></div>
+      <div class="sname">Twilight 3</div>
+      <div class="chips"><span class="chip half">Starlight 3.42 ◐</span><span class="chip pass">Nightfall 5.34 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#B7BABC"><span class="sl-dark">#B7BABC</span></div>
+      <div class="sname">Twilight 4</div>
+      <div class="chips"><span class="chip no">Starlight 1.93</span><span class="chip pass">Nightfall 9.49 ✓</span></div>
+    </div>
+<div class="swatch">
+      <div class="fill" style="background:#D3D3CE"><span class="sl-dark">#D3D3CE</span></div>
+      <div class="sname">Twilight 5</div>
+      <div class="chips"><span class="chip no">Starlight 1.48</span><span class="chip pass">Nightfall 12.32 ✓</span></div>
+    </div>
+<div class="swatch anchor">
+      <div class="fill" style="background:#FFFEF5"><span class="sl-dark">#FFFEF5</span></div>
+      <div class="sname">Starlight <em>primary</em></div>
+      <div class="chips"><span class="chip pass">Nightfall 18.29 ✓</span></div>
+    </div></div>
+    
+    
+    <p class="job">Working neutrals mixed from the palette's own poles... the hour when chroma drains out of the woods. Steps 1 and 2 set secondary text and captions; 3 through 5 handle rules, borders, form fields, and disabled states. Step 5 holds visible against Starlight so hairlines print. No gradient... neutrals hold still.</p>
+  </section>
+
+  
+  <section class="fam">
+    <div class="fam-head"><span class="fam-name">Working Set</span><span class="fam-tag">proposed · the tier volunteers see · membership pending ratification</span></div>
+    <div class="row">
+      <div class="swatch"><div class="fill" style="background:#2E364B"><span class="sl-light">#2E364B</span></div><div class="sname">Twilight 1</div></div>
+      <div class="swatch"><div class="fill" style="background:#575E6E"><span class="sl-light">#575E6E</span></div><div class="sname">Twilight 2</div></div>
+      <div class="swatch"><div class="fill" style="background:#D3D3CE"><span class="sl-dark">#D3D3CE</span></div><div class="sname">Twilight 5</div></div>
+      <div class="swatch"><div class="fill" style="background:#9B502E"><span class="sl-light">#9B502E</span></div><div class="sname">Golden Hour 2</div></div>
+      <div class="swatch"><div class="fill" style="background:#E2D1AC"><span class="sl-dark">#E2D1AC</span></div><div class="sname">Golden Hour 4</div></div>
+      <div class="swatch"><div class="fill" style="background:#1D4361"><span class="sl-light">#1D4361</span></div><div class="sname">Nocturnal 2</div></div>		
+      <div class="swatch"><div class="fill" style="background:#4496AC"><span class="sl-dark">#4496AC</span></div><div class="sname">Foxfire 1</div></div>
+      <div class="swatch"><div class="fill" style="background:#94D4DC"><span class="sl-dark">#94D4DC&nbsp;</span></div><div class="sname">Foxfire 3</div></div>
+    </div>
+    <p class="job">Foundation seven plus these eight is everything a flyer, newsletter, or Canva template needs. The full Supporting Palette above remains the system of record for the website and illustration work.</p>
+  </section>
+
+  <div class="rules">
+    <h2>Usage</h2>
+    <p><b>Supplement only.</b> A layout should read as the Foundation seven first. If a composition leans supporting, rebalance toward the Foundation rather than adding more steps.</p>
+    <p><b>Approach, don't arrive.</b> Steps stop short of their anchors: the last step of every family keeps clear visual distance from its Foundation color and stays visible against Starlight, so the Foundation remains the signature expression and every swatch stays a usable tool. The Illumination gradients are the one place a family touches its destination... gradients arrive, swatches never do.</p>
+    <p><b>Text.</b> Body text is always Nightfall on light grounds and Starlight on dark grounds. Twilight 1 and Twilight 2 may set secondary text and captions. Display and eyebrow type on Starlight may use Nocturnal 1–3, Moonrise 1–2, or Golden Hour 1–2. No other supporting color sets type. Afterglow itself never sets type below display size on Starlight (3.87:1).</p>
+    <p><b>Tone-on-tone.</b> Keep a graphic inside one family; its anchors are part of the family. Families are the containers that make tone-on-tone safe for non-designers.</p>
+    <p><b>De-emphasis.</b> Rules, dividers, borders, form fields, and disabled states come from Twilight 3–5, never from the chromatic families.</p>
+    <p><b>States.</b> On the web, hover and active shift one step darker within the same family.</p>
+    <p><b>Illumination gradients.</b> Hero and storytelling moments only, never UI chrome. Rebuild each gradient from its recipe so the middle keeps its chroma. A gradient may only sit on a ground it passes; the bands above show every sanctioned pairing, and Nocturnal is Starlight-only. Type over a gradient sits on its dark third, in Starlight. The flat UI around a gradient draws from that gradient's own family.</p>
+    <p><b>Scarcity.</b> Firefly and Foxfire 5 are the lit end of the system... the ramp holds cold, then ignites. They read as emission because they are rare. The moment they become wallpaper, the metaphor is gone.</p>
+  </div>
+
+  <div class="principle">No pigment enters the system from outside the Foundation seven. Every supporting color is a blend of two Foundation colors, or a Foundation color walked toward ink or Starlight. That single rule is what was worth taking from Firefox.</div>
+
+</div></body></html>

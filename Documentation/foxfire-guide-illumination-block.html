@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foxfire Guide · Illumination · Gradient Usage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Figtree:wght@400;500;600;700&family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nightfall:#0B122A; --midpine:#004E4B; --astral:#287790; --afterglow:#C4673D;
+    --firefly:#FBFFBF; --moonbeam:#D1DEFF; --starlight:#FFFEF5;
+    --tw1:#2E364B; --tw2:#575E6E; --gh2:#9B502E; --mr4:#A8B5D5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--starlight); color:var(--nightfall);
+    font-family:'Figtree',system-ui,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .page{max-width:760px; margin:0 auto; padding:60px clamp(22px,5vw,64px) 110px}
+  .draftnote{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--afterglow); font-weight:700; margin:0 0 26px}
+  .secnum{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--astral); font-weight:700; margin:0 0 8px}
+  h1{font-family:'Rosarivo',Georgia,serif; font-weight:400; font-size:clamp(34px,5.5vw,44px); line-height:1.12; margin:0 0 24px}
+  h2{font-family:'Rosarivo',Georgia,serif; font-weight:400; font-size:26px; margin:46px 0 16px}
+  .story p{font-family:'Crimson Text',Georgia,serif; font-size:19.5px; line-height:1.68; margin:0 0 16px; max-width:60ch}
+  p.body{font-size:15px; margin:0 0 13px; max-width:62ch}
+  .rulecall{border-left:3px solid var(--afterglow); padding:2px 0 2px 16px; margin:18px 0; font-size:14.5px; max-width:52ch}
+  .rulecall b{color:var(--afterglow)}
+
+  .grad{margin:0 0 26px}
+  .band{height:74px; border-radius:12px; border:1px solid rgba(11,18,42,.08)}
+  .g-noc{background:linear-gradient(90deg, #0B122A 0%, #162B47 28%, #1D4361 52%, #225C79 76%, #287790 100%)}
+  .g-mr{background:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%)}
+  .g-fx{background:linear-gradient(90deg, #287790 0%, #62ADC1 33%, #75CDDA 66%, #FBFFBF 100%)}
+  .g-gh{background:linear-gradient(90deg, #61301A 0%, #9B502E 28%, #C4673D 52%, #D8AC7D 76%, #E2D1AC 100%)}
+  .ghead{display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; margin:10px 0 3px}
+  .gname{font-size:16px; font-weight:700}
+  .gj{font-size:12px; color:var(--tw2)}
+  .gstory{font-size:13.5px; color:rgba(11,18,42,.8); max-width:62ch; margin:2px 0 6px}
+  .grounds{display:flex; gap:8px; flex-wrap:wrap}
+  .gb{font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding:4px 11px; border-radius:20px}
+  .gb.ok{background:rgba(0,78,75,.1); color:var(--midpine)}
+  .gb.no{background:rgba(196,103,61,.12); color:var(--gh2)}
+  .gb small{font-weight:500; letter-spacing:.02em; text-transform:none}
+
+  .hero{border-radius:14px; overflow:hidden; margin:20px 0 8px; position:relative;
+    background:linear-gradient(90deg, #0B122A 0%, #2F3954 22%, #555F7C 42%, #7D89A8 62%, #A8B5D5 82%, #D1DEFF 100%); padding:44px 40px}
+  .hero .eb{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--mr4); font-weight:600; margin:0 0 10px}
+  .hero .h{font-family:'Rosarivo',Georgia,serif; font-weight:400; font-size:clamp(28px,4.5vw,38px); line-height:1.15; color:var(--starlight); max-width:14ch; margin:0}
+  .hero .cap{position:absolute; right:18px; bottom:12px; font-size:10.5px; color:rgba(11,18,42,.55); font-weight:600}
+
+  .rule{margin:0 0 14px; max-width:64ch}
+  .rule .rt{font-size:15px; font-weight:700; margin:0 0 2px}
+  .rule p{font-size:14px; margin:0; color:rgba(11,18,42,.82)}
+  footer{margin-top:48px; font-size:11.5px; color:var(--tw2)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="draftnote">Section 3 block · guide-ready v1.1 · Golden Hour carries its full family range per steward ratification · every sanction measured, not asserted</p>
+  <p class="secnum">Color Landscape</p>
+  <h1>Illumination — the gradients</h1>
+
+  <div class="story">
+    <p>The Illumination gradients are the palette in motion. Each one is a Foundation journey rendered continuously: night deepening toward water, moonlight rising out of the dark, the glow arriving at the end of the blue, the ember warming into afterglow. Our solid colors approach these destinations; only the gradients arrive.</p>
+    <p>That is why a gradient is an event, not a background. Use one where the story turns — a hero area, a cover, a section opening, a banner that needs the night to move — and let the rest of the page hold still around it. One gradient per view. When arrival is everywhere, it stops meaning anything.</p>
+  </div>
+
+  <h2>The four journeys</h2>
+
+  <div class="grad">
+    <div class="band g-noc"></div>
+    <div class="ghead"><span class="gname">Nocturnal</span><span class="gj">Nightfall → Astral Deep</span></div>
+    <p class="gstory">The sky deepening toward water. The quietest of the four — structure and depth for openings on light pages.</p>
+    <div class="grounds"><span class="gb ok">Starlight · full edge</span><span class="gb no">Nightfall · withheld <small>(61% — fails the ground test)</small></span></div>
+  </div>
+
+  <div class="grad">
+    <div class="band g-mr"></div>
+    <div class="ghead"><span class="gname">Moonrise</span><span class="gj">Nightfall → Moonbeam</span></div>
+    <p class="gstory">Moonlight emerging from the dark. On Nightfall, the start bleeds into the ground by design — the moon rising out of the page itself.</p>
+    <div class="grounds"><span class="gb ok">Starlight · 94%</span><span class="gb ok">Nightfall · 81%, start bleeds by design</span></div>
+  </div>
+
+  <div class="grad">
+    <div class="band g-fx"></div>
+    <div class="ghead"><span class="gname">Foxfire</span><span class="gj">Astral Deep → Firefly</span></div>
+    <p class="gstory">The glow arriving. Cold water for most of its length; the yellow ignites only inside the final segment — the onset sits at 94% of the journey. Its strongest home is the dark, where the emission stays lit; on Starlight the glowing end dissolves into the paper.</p>
+    <div class="grounds"><span class="gb ok">Nightfall · full edge</span><span class="gb ok">Starlight · 78%, lit end bleeds by design</span></div>
+  </div>
+
+  <div class="grad">
+    <div class="band g-gh"></div>
+    <div class="ghead"><span class="gname">Golden Hour</span><span class="gj">Ember → Pale sand · the full warm ladder</span></div>
+    <p class="gstory">The complete warm journey: ember warming through Afterglow, then settling into the sands. On Nightfall it holds a full edge end to end; on Starlight the pale terminus comes to rest a breath above the paper — the fire cooling into the page. Still the most portable of the four.</p>
+    <div class="grounds"><span class="gb ok">Nightfall · full edge</span><span class="gb ok">Starlight · 99%, pale end kisses the paper</span></div>
+  </div>
+
+  <h2>Type over gradients</h2>
+  <p class="body">Words sit on the <b>dark third</b> of a gradient, in <b>Starlight, at display sizes only</b>. Body text never sits on a gradient — if a layout wants a paragraph, it wants a solid ground.</p>
+  <div class="hero">
+    <p class="eb">Spring session</p>
+    <p class="h">The forest keeps its own light</p>
+    <span class="cap">Starlight display type on the dark third · Moonrise</span>
+  </div>
+
+  <h2>The rules</h2>
+  <div class="rule"><div class="rt">Where they live</div><p>Hero areas, covers, section dividers, and storytelling graphics — the brand's arrival moments. Never in UI, never on buttons, never as letterfills, never behind body text, and never in everyday member materials; gradient work is steward work.</p></div>
+  <div class="rule"><div class="rt">One per view</div><p>A single gradient per page, spread, or screen. The scarcity that makes Firefly mean something governs the gradients too.</p></div>
+  <div class="rule"><div class="rt">Grounds are sanctioned, not chosen</div><p>A gradient sits only on a ground it passes — the badges above are the complete list. Nocturnal never sits on Nightfall.</p></div>
+  <div class="rule"><div class="rt">The company they keep</div><p>Flat UI and accents around a gradient draw from that gradient's own family, so the moment stays one journey rather than a collage.</p></div>
+  <div class="rule"><div class="rt">Exactly these recipes</div><p>The four builds above are the only gradients in the system. No homemade blends, no re-stopped variations, no new directions of travel.</p></div>
+  <div class="rule"><div class="rt">In print</div><p>Gradients band on modest presses. Physical reproductions get proofed by the brand steward before they ship.</p></div>
+
+  <footer>Illumination gradient usage · drops into Section 3 after the ground hierarchy · sanctions measured by the Color System's 75% / 1.5:1 ground test · full recipes and receipts in the Foxfire Color System, kept by the brand steward</footer>
+
+</div>
+</body>
+</html>
