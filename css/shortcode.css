@@ -72,14 +72,17 @@
 /* Parallax layer: sized taller than its container and shifted with a JS-driven
    transform on scroll (js/functions.js, hero_parallax()) rather than
    background-attachment:fixed, which iOS Safari and many Android browsers
-   ignore or render janky. The extra height/negative offset gives the
-   transform room to move without exposing an edge. */
+   ignore or render janky. The buffer is a fixed pixel amount rather than a
+   percentage of height — a percentage-tall box distorts the aspect ratio
+   background-size:cover fills against, forcing it to zoom in hard and crop
+   most of the photo away. A small fixed buffer keeps it close to the
+   viewport's real proportions while still giving the transform room to move. */
 .hero-parallax-bg {
     position: absolute;
-    top: -25%;
+    top: -120px;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: calc(100% + 240px);
     background-image: url('../images/Hero.webp');
     background-repeat: no-repeat;
     background-size: cover;

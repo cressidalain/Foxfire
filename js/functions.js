@@ -118,21 +118,32 @@
 		if ( $bg.length ) {
 			var scrolled = $(window).scrollTop();
 			/* Clamped so the shift never exceeds the buffer built into
-			   .hero-parallax-bg (top:-25%/height:150%) and exposes an edge. */
-			var offset = Math.min(scrolled, 600) * 0.25;
+			   .hero-parallax-bg (top:-120px/height:+240px) and exposes an edge. */
+			var offset = Math.min(scrolled, 500) * 0.2;
 			$bg.css("transform", "translateY(" + offset + "px)");
 		}
 	}
 
 	/* + Sticky Menu */
 	function sticky_menu() {
-		var menu_scroll = $("body").offset().top;
+		var $hero = $(".hero-img");
+		var menu_scroll;
+		if ( $hero.length ) {
+			/* The pinned hero (.hero-sticky) releases once scrollTop reaches
+			   hero height minus one viewport — go solid right around then,
+			   instead of instantly, so the header doesn't sit solid on top
+			   of an otherwise-still, still-transparent hero moment. */
+			menu_scroll = $hero.outerHeight() - $(window).height();
+			if ( menu_scroll < 0 ) { menu_scroll = 0; }
+		} else {
+			menu_scroll = $("body").offset().top;
+		}
 		var scroll_top = $(window).scrollTop();
-		
+
 		if ( scroll_top > menu_scroll ) {
 			$(".header-main").addClass("navbar-fixed-top animated fadeInDown");
 		} else {
-			$(".header-main").removeClass("navbar-fixed-top animated fadeInDown"); 
+			$(".header-main").removeClass("navbar-fixed-top animated fadeInDown");
 		}
 	}
 
