@@ -1,5 +1,30 @@
 /* Foxfire — page-specific additions on top of the recolored Dolomia base */
 
+/* Loader: threads echoing the fox mark's mane strands, with firefly nodes
+   drifting along them (replaces the template's generic spinning square) */
+#myloader .loader .fox-loader {
+  display: block;
+  width: min(280px, 60vw);
+  height: auto;
+  margin: 0 auto;
+}
+.fx-thread {
+  fill: none;
+  stroke: var(--midnight-pine);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: .4;
+}
+.fx-halo {
+  fill: var(--firefly);
+  opacity: .6;
+  filter: blur(4px);
+}
+.fx-core {
+  fill: var(--firefly);
+  filter: drop-shadow(0 0 3px rgba(251, 255, 191, .95));
+}
+
 /* Paper textures in place of flat color, repeating so any page length is covered */
 body {
   background-image: url(../img/starlight-paper-bg.jpg);
