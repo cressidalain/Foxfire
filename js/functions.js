@@ -117,10 +117,14 @@
 		var $bg = $(".hero-parallax-bg");
 		if ( $bg.length ) {
 			var scrolled = $(window).scrollTop();
-			/* Clamped so the shift never exceeds the buffer built into
-			   .hero-parallax-bg (top:-120px/height:+240px) and exposes an edge. */
-			var offset = Math.min(scrolled, 500) * 0.2;
-			$bg.css("transform", "translateY(" + offset + "px)");
+			/* .hero-parallax-bg is oversized to 115% of its own height via
+			   background-size, giving a built-in slack of exactly 15% of the
+			   element's height to pan through. Panning proportionally into
+			   that slack (rather than a flat px value) means it can never
+			   overshoot and expose an edge, on any screen size. */
+			var slack = $bg.outerHeight() * 0.15;
+			var progress = Math.min(scrolled, 500) / 500;
+			$bg.css("background-position-y", "-" + (progress * slack) + "px");
 		}
 	}
 

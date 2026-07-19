@@ -69,25 +69,26 @@
     overflow: hidden;
 }
 
-/* Parallax layer: sized taller than its container and shifted with a JS-driven
-   transform on scroll (js/functions.js, hero_parallax()) rather than
-   background-attachment:fixed, which iOS Safari and many Android browsers
-   ignore or render janky. The buffer is a fixed pixel amount rather than a
-   percentage of height — a percentage-tall box distorts the aspect ratio
-   background-size:cover fills against, forcing it to zoom in hard and crop
-   most of the photo away. A small fixed buffer keeps it close to the
-   viewport's real proportions while still giving the transform room to move. */
+/* Parallax layer, panned with a JS-driven background-position on scroll
+   (js/functions.js, hero_parallax()) rather than background-attachment:fixed,
+   which iOS Safari and many Android browsers ignore or render janky.
+   Hero.webp is ~2.1:1, wider than most viewports, so background-size:cover
+   already fills the box's full height with zero vertical slack to pan
+   within — cropping happens on the sides instead. Enlarging the BOX (the
+   earlier approach) forced cover to recompute and zoom in further, cropping
+   the photo hard. Instead the box stays exactly viewport-sized (unchanged
+   from the original, correctly-framed crop) and background-size explicitly
+   oversizes the image by 115%, creating a dedicated 15%-of-height sliver of
+   vertical slack that background-position-y can pan through underneath. */
 .hero-parallax-bg {
     position: absolute;
-    top: -120px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 240px);
+    inset: 0;
     background-image: url('../images/Hero.webp');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    will-change: transform;
+    background-size: auto 115%;
+    background-position-x: center;
+    background-position-y: top;
+    will-change: background-position;
     z-index: 0;
 }
 
