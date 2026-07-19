@@ -112,6 +112,15 @@
 		});	
 	}
 	
+	/* + Hero Parallax */
+	function hero_parallax() {
+		var $bg = $(".hero-parallax-bg");
+		if ( $bg.length ) {
+			var scrolled = $(window).scrollTop();
+			$bg.css("transform", "translateY(" + (scrolled * 0.35) + "px)");
+		}
+	}
+
 	/* + Sticky Menu */
 	function sticky_menu() {
 		var menu_scroll = $("body").offset().top;
@@ -135,6 +144,9 @@
 		if( $(".header-main").length ) {
 			sticky_menu();
 		}
+
+		/* - Set Hero Parallax* */
+		hero_parallax();
 
 		/* - Add Easing Effect on Section Scroll */
 		$('.navbar-nav li a[href*="#"]:not([href="#"]), .site-logo a[href*="#"]:not([href="#"])').on("click", function(e) {
@@ -418,6 +430,8 @@
 		if( $(".header-main").length ) {
 			sticky_menu();
 		}
+		/* - Set Hero Parallax* */
+		hero_parallax();
 	});
 	
 

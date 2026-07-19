@@ -53,11 +53,32 @@
 
 /* -- Photo Slider */
 .hero-img {
-	background-image: url('../images/Hero.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* Parallax layer: sized taller than its container and shifted with a JS-driven
+   transform on scroll (js/functions.js, hero_parallax()) rather than
+   background-attachment:fixed, which iOS Safari and many Android browsers
+   ignore or render janky. The extra height/negative offset gives the
+   transform room to move without exposing an edge. */
+.hero-parallax-bg {
+    position: absolute;
+    top: -15%;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background-image: url('../images/Hero.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    z-index: 0;
+}
+
+.hero-img #main-carousel {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-img .carousel-fade .carousel-inner .item {
