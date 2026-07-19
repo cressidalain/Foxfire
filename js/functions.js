@@ -117,22 +117,23 @@
 		var $bg = $(".hero-parallax-bg");
 		var $hero = $(".hero-img");
 		if ( $bg.length && $hero.length ) {
-			var scrolled = $(window).scrollTop();
-			/* Pan across the *entire* pinned scroll distance (hero height minus
-			   one viewport — the same math sticky_menu() uses for when the
-			   hero releases), not a flat px guess. Previously this was capped
-			   at 500px while the pin lasted much longer, so the image stopped
-			   moving well before the hero actually scrolled away — read as
-			   "way too slow" since most of the scroll produced no motion. */
-			var pinRunway = $hero.outerHeight() - $(window).height();
-			if ( pinRunway < 1 ) { pinRunway = 1; }
+			/* Standard scroll-past parallax: pan while the hero itself scrolls
+			   through the viewport (from its top reaching the top of the
+			   screen, to it having scrolled fully past), rather than trying to
+			   hold it in place with position:sticky. The sticky+runway version
+			   only worked when hero+runway together exceeded one viewport's
+			   height; once the hero shrank to the photo's own short ratio, the
+			   leftover runway space could end up shorter than the viewport and
+			   show up as a dead blank gap with nothing scrolled into it yet. */
+			var heroHeight = $hero.outerHeight();
+			var scrolled = $(window).scrollTop() - $hero.offset().top;
+			var progress = Math.min(Math.max(scrolled, 0), heroHeight) / heroHeight;
 			/* .hero-parallax-bg is oversized to 120% of its own height via
 			   background-size, giving a built-in slack of exactly 20% of the
 			   element's height to pan through. Panning proportionally into
 			   that slack (rather than a flat px value) means it can never
 			   overshoot and expose an edge, on any screen size. */
 			var slack = $bg.outerHeight() * 0.2;
-			var progress = Math.min(scrolled, pinRunway) / pinRunway;
 			$bg.css("background-position-y", "-" + (progress * slack) + "px");
 		}
 	}
@@ -142,12 +143,9 @@
 		var $hero = $(".hero-img");
 		var menu_scroll;
 		if ( $hero.length ) {
-			/* The pinned hero (.hero-sticky) releases once scrollTop reaches
-			   hero height minus one viewport — go solid right around then,
-			   instead of instantly, so the header doesn't sit solid on top
-			   of an otherwise-still, still-transparent hero moment. */
-			menu_scroll = $hero.outerHeight() - $(window).height();
-			if ( menu_scroll < 0 ) { menu_scroll = 0; }
+			/* Go solid once the hero has fully scrolled past (its bottom edge
+			   has cleared the top of the viewport), not instantly. */
+			menu_scroll = $hero.offset().top + $hero.outerHeight();
 		} else {
 			menu_scroll = $("body").offset().top;
 		}
