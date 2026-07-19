@@ -59,12 +59,17 @@
    crop close to the photo's natural framing instead of fighting it. Shorter
    on mobile (see breakpoint below) since 45vw is far too short once the
    viewport itself is narrow.
-   .hero-img is a scroll "runway" (sticky height + 60vh extra); .hero-sticky
+   .hero-img is a scroll "runway" (sticky height + 30vh extra); .hero-sticky
    pins to the viewport for that whole distance via position:sticky, giving
-   the parallax layer inside real scroll room to drift before releasing. */
+   the parallax layer inside real scroll room to drift before releasing.
+   The runway is deliberately modest relative to the now-shorter hero band —
+   a large flat addition felt hugely disproportionate once the hero itself
+   shrank to the photo's own ratio (min(100vh,45vw) gets short fast at
+   narrower widths), reading as "content pushed way down" for a lot of
+   empty scroll before anything else appeared. */
 .hero-img {
     position: relative;
-    height: calc(min(100vh, 45vw) + 60vh);
+    height: calc(min(100vh, 45vw) + 30vh);
 }
 
 .hero-sticky {
@@ -76,7 +81,7 @@
 
 @media (max-width: 767px) {
     .hero-img {
-        height: calc(70vh + 40vh);
+        height: calc(70vh + 20vh);
     }
     .hero-sticky {
         height: 70vh;
@@ -139,10 +144,17 @@
 	align-items: center;
 }
 
+/* Was a fixed width:600px, which never adapted to .hero-sticky's height as it
+   shrinks at narrower breakpoints (min(100vh,45vw) gets short fast) — the
+   logo would overflow the now-shorter hero and get clipped by
+   .hero-sticky's overflow:hidden instead of scaling down with it.
+   max-width/max-height with auto/auto lets the browser scale the logo to
+   whichever constraint is tighter, so it always fits. */
 .hero-img .item > img {
+	width: auto;
 	height: auto;
-	width: 600px;
-	padding-top: 40px;
+	max-width: min(600px, 80%);
+	max-height: 65%;
     display: inline-block;
 }
 
