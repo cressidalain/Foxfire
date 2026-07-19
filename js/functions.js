@@ -117,7 +117,10 @@
 		var $bg = $(".hero-parallax-bg");
 		if ( $bg.length ) {
 			var scrolled = $(window).scrollTop();
-			$bg.css("transform", "translateY(" + (scrolled * 0.35) + "px)");
+			/* Clamped so the shift never exceeds the buffer built into
+			   .hero-parallax-bg (top:-25%/height:150%) and exposes an edge. */
+			var offset = Math.min(scrolled, 600) * 0.25;
+			$bg.css("transform", "translateY(" + offset + "px)");
 		}
 	}
 

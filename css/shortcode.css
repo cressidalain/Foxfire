@@ -52,8 +52,20 @@
 /* ## Shortcodes */
 
 /* -- Photo Slider */
+/* .hero-img is a tall scroll "runway" (180vh); .hero-sticky pins to the
+   viewport for that whole distance via position:sticky, so there's enough
+   scroll room for the parallax layer inside it to visibly drift before the
+   section finally releases and scrolls away. Without the extra runway the
+   hero (at ~1 viewport tall) scrolls past too fast to notice any parallax. */
 .hero-img {
     position: relative;
+    height: 180vh;
+}
+
+.hero-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -64,10 +76,10 @@
    transform room to move without exposing an edge. */
 .hero-parallax-bg {
     position: absolute;
-    top: -15%;
+    top: -25%;
     left: 0;
     width: 100%;
-    height: 130%;
+    height: 150%;
     background-image: url('../images/Hero.webp');
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,7 +88,7 @@
     z-index: 0;
 }
 
-.hero-img #main-carousel {
+.hero-sticky #main-carousel {
     position: relative;
     z-index: 1;
 }
@@ -107,10 +119,10 @@
 }
 
 .hero-img .item {
-	height: 900px;
+	height: 100vh;
 	display: flex;
 	justify-content: center; /* Centers horizontally */
-	align-items: center;  
+	align-items: center;
 }
 
 .hero-img .item > img {
