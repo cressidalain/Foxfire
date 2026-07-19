@@ -52,49 +52,59 @@
 /* ## Shortcodes */
 
 /* -- Photo Slider */
-/* .hero-img is a tall scroll "runway" (180vh); .hero-sticky pins to the
-   viewport for that whole distance via position:sticky, so there's enough
-   scroll room for the parallax layer inside it to visibly drift before the
-   section finally releases and scrolls away. Without the extra runway the
-   hero (at ~1 viewport tall) scrolls past too fast to notice any parallax. */
+/* Hero.webp is ~2.1:1 (3800x1802) — much wider than a typical viewport. A
+   full 100vh-tall hero box forces background-size:cover to zoom in hard to
+   fill that height, cropping most of the photo's width away. Capping the
+   height near the photo's own ratio (min(100vh, 45vw) ≈ 2.2:1) keeps the
+   crop close to the photo's natural framing instead of fighting it. Shorter
+   on mobile (see breakpoint below) since 45vw is far too short once the
+   viewport itself is narrow.
+   .hero-img is a scroll "runway" (sticky height + 60vh extra); .hero-sticky
+   pins to the viewport for that whole distance via position:sticky, giving
+   the parallax layer inside real scroll room to drift before releasing. */
 .hero-img {
     position: relative;
-    height: 180vh;
+    height: calc(min(100vh, 45vw) + 60vh);
 }
 
 .hero-sticky {
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: min(100vh, 45vw);
     overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .hero-img {
+        height: calc(70vh + 40vh);
+    }
+    .hero-sticky {
+        height: 70vh;
+    }
 }
 
 /* Parallax layer, panned with a JS-driven background-position on scroll
    (js/functions.js, hero_parallax()) rather than background-attachment:fixed,
    which iOS Safari and many Android browsers ignore or render janky.
-   Hero.webp is ~2.1:1, wider than most viewports, so background-size:cover
-   already fills the box's full height with zero vertical slack to pan
-   within — cropping happens on the sides instead. Enlarging the BOX (the
-   earlier approach) forced cover to recompute and zoom in further, cropping
-   the photo hard. Instead the box stays exactly viewport-sized (unchanged
-   from the original, correctly-framed crop) and background-size explicitly
-   oversizes the image by 115%, creating a dedicated 15%-of-height sliver of
-   vertical slack that background-position-y can pan through underneath. */
+   background-size explicitly oversizes the image by 120%, creating a
+   dedicated slack that background-position-y pans through underneath. */
 .hero-parallax-bg {
     position: absolute;
     inset: 0;
     background-image: url('../images/Hero.webp');
     background-repeat: no-repeat;
-    background-size: auto 115%;
+    background-size: auto 120%;
     background-position-x: center;
     background-position-y: top;
     will-change: background-position;
     z-index: 0;
 }
 
-.hero-sticky #main-carousel {
+.hero-sticky #main-carousel,
+.hero-sticky #main-carousel .carousel-inner {
     position: relative;
     z-index: 1;
+    height: 100%;
 }
 
 .hero-img .carousel-fade .carousel-inner .item {
@@ -123,7 +133,7 @@
 }
 
 .hero-img .item {
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	justify-content: center; /* Centers horizontally */
 	align-items: center;

@@ -115,15 +115,24 @@
 	/* + Hero Parallax */
 	function hero_parallax() {
 		var $bg = $(".hero-parallax-bg");
-		if ( $bg.length ) {
+		var $hero = $(".hero-img");
+		if ( $bg.length && $hero.length ) {
 			var scrolled = $(window).scrollTop();
-			/* .hero-parallax-bg is oversized to 115% of its own height via
-			   background-size, giving a built-in slack of exactly 15% of the
+			/* Pan across the *entire* pinned scroll distance (hero height minus
+			   one viewport — the same math sticky_menu() uses for when the
+			   hero releases), not a flat px guess. Previously this was capped
+			   at 500px while the pin lasted much longer, so the image stopped
+			   moving well before the hero actually scrolled away — read as
+			   "way too slow" since most of the scroll produced no motion. */
+			var pinRunway = $hero.outerHeight() - $(window).height();
+			if ( pinRunway < 1 ) { pinRunway = 1; }
+			/* .hero-parallax-bg is oversized to 120% of its own height via
+			   background-size, giving a built-in slack of exactly 20% of the
 			   element's height to pan through. Panning proportionally into
 			   that slack (rather than a flat px value) means it can never
 			   overshoot and expose an edge, on any screen size. */
-			var slack = $bg.outerHeight() * 0.15;
-			var progress = Math.min(scrolled, 500) / 500;
+			var slack = $bg.outerHeight() * 0.2;
+			var progress = Math.min(scrolled, pinRunway) / pinRunway;
 			$bg.css("background-position-y", "-" + (progress * slack) + "px");
 		}
 	}
