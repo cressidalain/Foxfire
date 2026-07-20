@@ -596,9 +596,16 @@ function initWorkFilter(){
  --------------------------------------------- */
 function initImgHeight(){
   (function($){
-    $(".js-height-fullscr").height($(window).height());
+    /* Below 767px this section has its own fixed mobile height (see
+       .sm-content-cont in style.css) so the hero doesn't swallow the
+       whole screen on phones — don't stomp it with an inline height. */
+    if ( $(window).width() > 767 ) {
+      $(".js-height-fullscr").height($(window).height());
+    } else {
+      $(".js-height-fullscr").css("height", "");
+    }
   })(jQuery);
-} 
+}
 
 /* ---------------------------------------------
   MASONRY

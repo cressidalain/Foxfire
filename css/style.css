@@ -959,6 +959,12 @@ support for no js
     letter-spacing:2px;
     color:var(--starlight);
 }
+
+@media (max-width: 500px) {
+  .norm-16-wide {
+    line-height: 26px;
+  }
+}
 .norm-16{
 	font-family: 'Figtree',Arial,Helvetica,sans-serif;
 	font-size: 16px;
