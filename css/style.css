@@ -8633,7 +8633,6 @@ h2.portfolio-timeline-title {
   padding-bottom: clamp(50px, 10vw, 80px);
   padding-left: clamp(30px, 5vw, 40px);
   padding-right: clamp(30px, 5vw, 40px);
-  max-height: 400px; 
 }
 
 @media (min-width: 992px) {
@@ -8746,7 +8745,6 @@ h2.portfolio-timeline-title {
 
   .fes2-main-text-cont--smallpadding {
     padding: 40px 30px 40px 30px;
-    overflow-y: auto;
     order: 2;
   }
 
