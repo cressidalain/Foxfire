@@ -8646,6 +8646,16 @@ h2.portfolio-timeline-title {
   .fes2-main-text-cont--smallpadding {
     padding: 80px 40px 80px 40px;
   }
+
+  /* #whyff: the FF Statement quote (col-md-5) is much shorter than the
+     Values grid beside it (col-md-7, two rows of icon boxes); floated
+     Bootstrap columns top-align by default, so the quote hugged the top
+     instead of sitting level with the grid's middle. */
+  #whyff > .container > .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 /* --- Tablet / Mobile (<=991px) --- */
