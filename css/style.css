@@ -2958,7 +2958,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 
 @media only screen and (max-width: 767px){
   .sm-content-cont {
-    height: 350px; /*300*/
+    height: 500px;
   }
   .sm-content-cont .light-72-wide, .sm-content-cont-fullscr .light-72-wide{
     font-size:25px;
