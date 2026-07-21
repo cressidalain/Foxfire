@@ -3258,7 +3258,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 /* #CONTACT MENU
 =====================================================*/
 .menu-contact-info {
-	background-color:#c6c7c9;
+	background-color:var(--afterglow);
 	padding:0;
 	color: var(--starlight);
 }
@@ -3720,9 +3720,10 @@ select.input-border {
   color:var(--nightfall); 
 }
 .black-header #main-menu .navbar .nav > li:hover > a, .header-black-white #main-menu .navbar .nav > li:hover > a {
-  	font-weight: 500
+  	font-weight: 500;
 	color:var(--afterglow); 
 }
+
 #main-menu .navbar .nav .parent {
   position: relative;
 }
