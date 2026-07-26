@@ -9078,12 +9078,9 @@ h2.portfolio-timeline-title {
   .fes2-main-text-cont {
     max-width: 350px;
   }
-  .fes7-text-cont {
-    padding: 30px;
-  }
-  /* .quote4/.fes7-text-cont h1.conditions/.fes7-text-cont p.conditions
-     overrides live right after their base rules further down this file
-     - see note above in the 991px block. */
+  /* .fes7-text-cont's own padding override, and .quote4/
+     h1.conditions/p.conditions, all live right after their base rules
+     further down this file - see note above in the 991px block. */
 
   /* .p-50-cont wraps the quote-plus-values-grid block and the daily-
      schedule block right after every hero image (index/approach/
@@ -11472,6 +11469,12 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   padding: 40px 60px;
 }
 
+@media (max-width: 480px) {
+  .fes7-text-cont {
+    padding: 30px;
+  }
+}
+
 .fes7-text-cont h1 {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -11856,6 +11859,10 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 	.mt-sm-60{margin-top:60px}
 	.pt-sm-50{padding-top:50px}
 	.pt-sm-60{padding-top:60px}
+}
+
+@media only screen and (max-width : 480px) {
+	.conditions-cont { padding-top: 40px; padding-bottom: 40px; }
 }
 .video-ads-text-cont.video-ads-text-black {
   color: var(--nightfall);
