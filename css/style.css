@@ -8904,6 +8904,25 @@ h2.portfolio-timeline-title {
 /* --- Tablet / Mobile (<=991px) --- */
 @media (max-width: 991px) {
 
+  /* Quote-plus-values-grid rows (#whyff on index.html, the matching
+     "Typical Day"/"So, What Do We Mean By Cooperative?" blocks on
+     details.html/approach.html): below 992px the quote and the grid
+     stack (plain block flow, no flex centering), and the quote's own
+     padding-bottom:20px (.pb-20) reads as barely any gap once the
+     grid's heading sits right under it. */
+  .col-md-5.pb-20, .col-md-6.pb-20 {
+    padding-bottom: 40px;
+  }
+
+  /* Those same values-grid items (.fes7-box) are 2-per-row on desktop,
+     so the row wrap itself gives visual separation; stacked into one
+     column on tablet/mobile, their 10px padding-bottom isn't enough,
+     especially for the heading-only variants (no paragraph under the
+     h3) used on details.html/join.html's "At a Glance" list. */
+  .fes7-box {
+    padding-bottom: 24px;
+  }
+
   /* --- Contact section --- */
   .cis-icon {
     font-size: 28px;
@@ -11456,6 +11475,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     font-weight: 400;
     line-height: 20px;
 	margin-top: 5px;
+	margin-bottom: 24px;
 }
 
 .fes7-text-cont h1.define{
