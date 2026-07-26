@@ -1026,6 +1026,7 @@ support for no js
 	font-weight: 300;
     letter-spacing:2px;
     color:var(--starlight);
+    text-wrap: balance;
 }
 
 @media (max-width: 500px) {
@@ -3137,7 +3138,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 }
 
 @media only screen and (max-width: 767px){
-  .sm-content-cont .sm-content-cont-500{
+  .sm-content-cont {
     height: 500px;
   }
   .sm-content-cont .light-72-wide, .sm-content-cont-fullscr .light-72-wide{
@@ -11494,6 +11495,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 	color:var(--goldenhr1);
 	margin-bottom: 35px;
 	font-weight:normal;
+	text-wrap: balance;
 }
 
 
