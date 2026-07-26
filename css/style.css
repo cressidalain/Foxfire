@@ -9058,7 +9058,7 @@ h2.portfolio-timeline-title {
     margin: 0 20px 30px;
   }
   .fes7-box {
-    margin: 0 20px;
+    margin-right: 20px;
     padding-bottom: 5px;
   }
 }
@@ -11485,6 +11485,15 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   }
 }
 
+/* Daily-schedule entries (details.html/join.html) reuse .fes7-text-cont
+   only for its h2.schedule/p.time/p.info styling - its own 40px/60px
+   (30px mobile) padding was never meant for nine stacked per-entry
+   divs and made a mess here. Compound selector so it wins regardless
+   of source order relative to the plain .fes7-text-cont rule above. */
+.fes7-text-cont.schedule-entry {
+  padding: 0 20px;
+}
+
 .fes7-text-cont h1 {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -11594,12 +11603,18 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 
 
 .fes7-text-cont p.info {
-    color: var(--goldenhr2);
+    color: var(--goldenhr1);
     font-size: 17px;
     font-weight: 400;
     line-height: 20px;
 	margin-top: 5px;
 	margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .fes7-text-cont p.info {
+    margin-bottom: 15px;
+  }
 }
 
 .fes7-text-cont h1.define{
