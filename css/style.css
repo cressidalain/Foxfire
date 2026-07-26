@@ -1293,7 +1293,7 @@ support for no js
 .fes2-main-text-cont {
   margin: 0 auto;
   padding: 50px 30px 50px 30px;
-  max-width:400px; 
+  max-width:500px;
 }
 .fes2-text-cont{
 	margin-top:15px;
@@ -4680,7 +4680,7 @@ header.affix .logo .logo-img {
 blockquote {
   padding: 10px 20px;
   padding-left:30px;
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   border-left: 3px solid var(--afterglow);
 }
 
@@ -9055,10 +9055,10 @@ h2.portfolio-timeline-title {
     max-width: 600px;
   }
   blockquote {
-    margin-left: 10px;
+    margin: 0 20px 30px;
   }
   .fes7-box {
-    margin-right: 20px;
+    margin: 0 20px;
     padding-bottom: 5px;
   }
 }
@@ -9080,7 +9080,8 @@ h2.portfolio-timeline-title {
     font-size: 16px;
   }
   .fes7-box p {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 18px;
   }
   .sm-content-cont-500 {
     height: 300px;
