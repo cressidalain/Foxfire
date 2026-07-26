@@ -1427,6 +1427,13 @@ support for no js
 	font-weight: 300;
 }
 
+@media (max-width: 480px) {
+  .title-fs-20 {
+    font-size: 28px;
+    line-height: 26px;
+  }
+}
+
 .fes3-img {
   background: url(../images/fes3.jpg) center top no-repeat;
   background-size: cover;
@@ -11626,6 +11633,17 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   color:var(--starlight);
 }
 
+@media (max-width: 480px) {
+  .philosophy-ads-text-cont p.philosophy {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .philosophy-ads-text-cont p.closerlk {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
 
 .fes2-title-45 {
 	color:var(--nightfall);
@@ -11640,6 +11658,13 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 	font-size: 16px;
 	line-height: 20px;
   font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .fes2-text-cont {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 .color-dark{
   color:var(--nightfall);
