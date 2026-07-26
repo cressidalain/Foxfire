@@ -4368,7 +4368,33 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 }
 
 .logo-img {
-  height: 65px;
+  height: 72px;
+  -webkit-transition: height .4s ease 0s;
+  -o-transition: height .4s ease 0s;
+  transition: height .4s ease 0s;
+}
+
+/* .affix.header has a fixed height:60px (see ~line 4245), but .logo-2's
+   affix padding (9px + 9px = 18px) left room for only a 42px logo. With
+   the base logo taller than that, the affixed header's real content
+   height (83px) exceeded its own 60px box, so it visually overflowed
+   past its own edge and covered the top of whatever page content sits
+   just below the fixed header once scrolled. Shrinking the logo on
+   affix keeps 42 + 18 = 60px, matching the header's own box exactly. */
+.affix .logo-img {
+  height: 42px;
+}
+
+@media (max-width: 1024px) {
+  .logo-img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-img {
+    height: 50px;
+  }
 }
 
 .logo-img.logo-color-change {
