@@ -11837,11 +11837,19 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .p-160-cont{ padding-top:160px; padding-bottom:160px;}
 .pt-160-b-120-cont{ padding-top:160px; padding-bottom:120px;}
 .pt-120-b-120-cont{ padding-top:120px; padding-bottom:120px;}
+
+/* Dedicated to the "When the conditions are right..." block
+   (index.html only) instead of reusing the shared .p-100-cont utility,
+   so tuning its padding can never affect any other section. Matches
+   .p-100-cont's own values for now - a pure rename, no visual change. */
+.conditions-cont { padding-top: 100px; padding-bottom: 100px; }
+
 @media only screen and (max-width : 768px) {
 	.p-90-cont, .p-100-cont, .p-110-cont{ padding-top:80px; padding-bottom:80px;}
 	.p-160-cont{ padding-top:120px; padding-bottom:120px;}
 	.pt-160-b-120-cont{ padding-top:100px; padding-bottom:70px;}
 	.pt-120-b-120-cont{ padding-top:100px; padding-bottom:70px;}
+	.conditions-cont { padding-top: 80px; padding-bottom: 80px; }
 	.mt-sm-50{margin-top:50px}
 	.mt-sm-60{margin-top:60px}
 	.pt-sm-50{padding-top:50px}
