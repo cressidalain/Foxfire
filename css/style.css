@@ -1299,7 +1299,7 @@ support for no js
 }
 
 .fes2-img {
-  background: url(../../../haswell-multipurpose-one-multi-page-template-2022-02-21-23-52-57-utc/Template/html/images/fes2.jpg) 50% 50% no-repeat;
+  background: url(../../../haswell-multipurpose-one-multi-page-template-2022-02-21-23-52-57-utc/Template/html/images/fes2.jpg) center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1311,11 +1311,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .day-img {
-  background: url("../images/typday.jpg") 50% 50% no-repeat;
+  background: url("../images/typday.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1327,11 +1327,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .learning-img {
-  background: url("../images/learning.jpg") 50% 50% no-repeat;
+  background: url("../images/learning.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1343,11 +1343,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .village-img {
-  background: url("../images/village.jpg") 50% 50% no-repeat;
+  background: url("../images/village.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1359,11 +1359,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .secular-img{
-  background: url("../images/secular.jpg") 50% 50% no-repeat;
+  background: url("../images/secular.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1375,11 +1375,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .responsibility-img{
-  background: url("../images/responsibility.jpg") 50% 50% no-repeat;
+  background: url("../images/responsibility.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1391,11 +1391,11 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .growing-img{
-  background: url("../images/growing.jpg") 50% 50% no-repeat;
+  background: url("../images/growing.jpg") center top no-repeat;
   
   width: 100%;
   display: block;	
@@ -1407,7 +1407,7 @@ support for no js
   overflow: hidden;
 
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .title-fs-45 {
@@ -1427,7 +1427,7 @@ support for no js
 }
 
 .fes3-img {
-  background: url(../images/fes3.jpg) 50% 50% no-repeat;
+  background: url(../images/fes3.jpg) center top no-repeat;
   background-size: cover;
   
   width: 100%;
@@ -1439,7 +1439,7 @@ support for no js
   box-sizing: border-box;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 .line-3-70{
 	margin-top:11px;
@@ -1690,7 +1690,7 @@ support for no js
   left: 0;
   width: 100%;
   height: 100%;
-  background-position: 50% 50%;
+  background-position: center top;
   background-size: cover;
   z-index: 0;
   
@@ -1702,7 +1702,7 @@ support for no js
   box-sizing: border-box;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 .fes7-img-constr {
@@ -1713,7 +1713,7 @@ support for no js
   height: 100%;
   z-index: 0;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: center top;
   z-index: 0;
   
   width: 100%;
@@ -1724,7 +1724,7 @@ support for no js
   box-sizing: border-box;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center center;  
+  background-position: center top;  
 }
 .white-bg{
 	background-color:var(--starlight);
@@ -3091,11 +3091,11 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 /* #STATIC MEDIA #NEW
 =====================================================*/
 .sm-img-bg {
-  background-position: 10% 0px;
+  background-position: center top;
 }
 
 .sm-img-bg-fullscr {
-  background-position: 50% 0px;
+  background-position: center top;
   background-size:cover;
   
   width: 100%;
@@ -3112,7 +3112,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 
 .sm-video-bg {
   background-image: url(../../../haswell-multipurpose-one-multi-page-template-2022-02-21-23-52-57-utc/Template/html/images/static-media/video-bg.jpg);
-  background-position: 50% 0px;
+  background-position: center top;
   background-size:cover;
   overflow: hidden;
   position:relative;
@@ -3214,7 +3214,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   background-image: url(images/approach.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   z-index:1;
 
   display: block;
@@ -3377,7 +3377,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   overflow: hidden;
   background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center top;
 }
 .page-title-small {
   padding-top:118px;
@@ -5482,7 +5482,7 @@ blockquote.custom-blockquote:before {
 	padding-bottom:150px;
 }
 .under-constr-bg {
-  background: url(../../../haswell-multipurpose-one-multi-page-template-2022-02-21-23-52-57-utc/Template/html/images/under-const.jpg) 50% 50%; 
+  background: url(../../../haswell-multipurpose-one-multi-page-template-2022-02-21-23-52-57-utc/Template/html/images/under-const.jpg) center top; 
   background-size: cover !important;
   
   width: 100%;
@@ -5494,7 +5494,7 @@ blockquote.custom-blockquote:before {
   box-sizing: border-box;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
 }
 
 @media only screen and (max-width: 767px) {
@@ -8923,6 +8923,18 @@ h2.portfolio-timeline-title {
     padding-bottom: 24px;
   }
 
+  /* "When the conditions are right..." block (.fes7-text-cont on
+     index.html): let the quote/heading/paragraph use more of the
+     stacked-full-width column instead of staying capped at desktop's
+     narrower measure. Font-size overrides for .quote4/h1.conditions/
+     p.conditions live further down, right after their base rules -
+     those base rules are unconditional (no media query) and appear
+     later in this file, so an equal-specificity override placed here
+     would lose to them regardless of viewport width. */
+  .fes2-main-text-cont {
+    max-width: 800px;
+  }
+
   /* --- Contact section --- */
   .cis-icon {
     font-size: 28px;
@@ -9023,6 +9035,62 @@ h2.portfolio-timeline-title {
   .page-section .flex-stretch-row > .col-md-6 > .row {
     display: flex;
     flex-direction: column;
+  }
+}
+
+/* --- Small tablet / large phone (<=736px) --- */
+@media (max-width: 736px) {
+  .fes2-main-text-cont {
+    max-width: 600px;
+  }
+  blockquote {
+    margin-left: 10px;
+  }
+  .fes7-box {
+    margin-right: 20px;
+    padding-bottom: 5px;
+  }
+}
+
+/* --- Mobile (<=480px) --- */
+@media (max-width: 480px) {
+  .quote2 p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .quote2 p.coopdef {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .fes7-box-icon {
+    font-size: 30px;
+  }
+  .fes7-box h3 {
+    font-size: 16px;
+  }
+  .fes7-box p {
+    font-size: 16px;
+  }
+  .sm-content-cont-500 {
+    height: 300px;
+  }
+  .fes2-main-text-cont {
+    max-width: 350px;
+  }
+  .fes7-text-cont {
+    padding: 30px;
+  }
+  /* .quote4/.fes7-text-cont h1.conditions/.fes7-text-cont p.conditions
+     overrides live right after their base rules further down this file
+     - see note above in the 991px block. */
+
+  /* .p-50-cont wraps the quote-plus-values-grid block and the daily-
+     schedule block right after every hero image (index/approach/
+     details/join.html) - 50px top/bottom reads as too much once
+     everything else on the page has tightened up for mobile. */
+  .p-50-cont {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
@@ -11399,6 +11467,10 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   }
 }
 
+.fes7-text-cont {
+  padding: 40px 60px;
+}
+
 .fes7-text-cont h1 {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -11447,7 +11519,44 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   line-height: 36px;
   font-optical-sizing: auto;
   font-weight: 400;
-  color:var(--goldenhr1); 	
+  color:var(--goldenhr1);
+}
+
+/* Breakpoint overrides for the three rules just above - placed here,
+   after their unconditional base rules, so they actually win the
+   cascade (equal selector specificity means source order decides, and
+   a media-query block earlier in the file loses to a plain rule that
+   comes later, regardless of whether the query matches). */
+@media (max-width: 991px) {
+  .fes7-text-cont h1.conditions {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .quote4 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .fes7-text-cont p.conditions {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fes7-text-cont h1.conditions {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }
+  .quote4 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 22px;
+  }
+  .fes7-text-cont p.conditions {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 
