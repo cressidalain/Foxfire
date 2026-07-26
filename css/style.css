@@ -3804,7 +3804,7 @@ select.input-border {
 	border-color:rgba(75,78,83,.5); 
 }
 .affix.header-1.black-header #main-menu .navbar .nav > li.current > a{
-	border-color:rgba(75,78,83,0); 
+	border-bottom: 2px solid var(--afterglow); 
 }
 .affix.header-1.header-black-white #main-menu .navbar .nav > li.current > a, .affix.header-1.header-black-white #main-menu .navbar .nav > li > a {
 	color:var(--nightfall); 
