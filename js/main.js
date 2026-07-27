@@ -268,7 +268,7 @@ function initMenu() {
    $(primary).find('.parent > a').click(function(event){
 	if ((body.width()  > 979) &&  (navigator.userAgent.match(/iPad|iPhone|Android/i))) {
 	  var link = $(this);
-	  
+
 	  if (link.parent().hasClass('open')) {
 		link.parent().removeClass('open'),
 		event.preventDefault();
@@ -277,7 +277,17 @@ function initMenu() {
 		link.parent().addClass('open')
 	  }
 	}
-  }); 
+  });
+
+  // Opening the mobile/tablet dropdown before the page has scrolled
+  // (no .affix yet) left the header transparent with the logo hidden,
+  // while the dropdown panel below it is always solid - toggle a class
+  // so the header matches the same solid look .affix gives once scrolled.
+  $(primary).find('.navbar-collapse').on('show.bs.collapse', function(){
+	$('#nav').addClass('menu-open');
+  }).on('hide.bs.collapse', function(){
+	$('#nav').removeClass('menu-open');
+  });
 
 }
 

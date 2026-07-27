@@ -4370,6 +4370,13 @@ background:none;
 .affix.black-header .header-wrapper {
 	background: var(--nightfall);
 }
+/* Mobile/tablet menu opened before scrolling past the hero (no .affix
+   yet): match the same solid header .affix gives once scrolled, so
+   opening the hamburger at the top of the page doesn't leave a
+   transparent gap above the (always-solid) dropdown panel below it. */
+.header.black-header.menu-open .header-wrapper {
+	background: var(--nightfall);
+}
 #nav-below.header {
 	position:relative;
 }
@@ -11611,6 +11618,11 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   -webkit-transition: all .3s cubic-bezier(0.000, 0.000, 0.580, 1.000);
   -o-transition: all .3s cubic-bezier(0.000, 0.000, 0.580, 1.000);
   transition: all .3s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  opacity:1;
+}
+/* Same as .affix above, but for the mobile/tablet menu-open state
+   before the page has scrolled far enough to affix. */
+.menu-open .hiding-logo.logo-img {
   opacity:1;
 }
 
