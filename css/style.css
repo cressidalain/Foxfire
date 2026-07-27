@@ -3378,8 +3378,24 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 }
 
 .contact-title-cont {
-  padding-top:130px;
+  /* Reserves space under the fixed header (no hero on this page to do
+     it implicitly) - sized to the header's own real height at each
+     tier (141px/108px/96px measured, with the larger contact-page-only
+     logo) plus a little breathing room. */
+  padding-top:158px;
   padding-bottom:0;
+}
+
+@media (max-width: 991px) {
+  .contact-title-cont {
+    padding-top: 125px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-title-cont {
+    padding-top: 112px;
+  }
 }
 
 .page-title {
@@ -4461,6 +4477,25 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 @media (max-width: 500px) {
   .logo-img {
     height: 50px;
+  }
+}
+
+/* contact.html's header is the only one with .no-transparent (it has
+   no hero to sit over, so it's solid from the start) - scoping the
+   larger logo to that class keeps every other page's logo untouched. */
+.no-transparent .logo-img {
+  height: 90px;
+}
+
+@media (max-width: 1024px) {
+  .no-transparent .logo-img {
+    height: 74px;
+  }
+}
+
+@media (max-width: 500px) {
+  .no-transparent .logo-img {
+    height: 62px;
   }
 }
 

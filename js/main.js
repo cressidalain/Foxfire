@@ -629,17 +629,14 @@ function initMap(){
   (function($){
     
     if (gmMapDiv.length) {
-  
-      var gmCenterAddress = gmMapDiv.attr("24 Clapboard Ridge Rd, Danbury, CT 06811"),
-          gmMarkerAddress = gmMapDiv.attr("24 Clapboard Ridge Rd, Danbury, CT 06811"),
-          gmLat = gmMapDiv.attr("41.408734"),
-          gmLong = gmMapDiv.attr("-73.468251");
-      
+
+      var gmLat = gmMapDiv.attr("data-latitude"),
+          gmLong = gmMapDiv.attr("data-longitude");
+
       gmMapDiv.gmap3({
           action: "init",
           marker: {
-              //address: gmMarkerAddress,  //The option to specify the address instead of latitude and longitude. Read more in the documentation.
-              latLng:[gmLat, gmLong], 
+              latLng:[gmLat, gmLong],
               options: {
                   icon: "images/loc-marker.png"
               }
