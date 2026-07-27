@@ -1512,6 +1512,16 @@ support for no js
   padding-bottom: 30px;
 }
 
+/* Compound selector (div.section-title.container, join.html's Fees
+   heading+paragraph) vs the bare .section-title also used directly on
+   an <h2> on contact.html (which must stay left-aligned next to its
+   form) - scoping this way keeps the two usages from colliding. */
+.section-title.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 .section-title h2 {
   font-family: "Rosarivo", Georgia, serif;
@@ -1519,11 +1529,26 @@ support for no js
   font-size:28px;
   line-height:36px;
   font-optical-sizing: auto;
-  color:var(--goldenhr1); 
+  color:var(--goldenhr1);
   border-left:var(--goldenhr4) 3px solid;
-  margin-bottom:20px;	
+  margin-bottom:20px;
   padding:10px 25px 10px 25px;
-	
+
+}
+
+/* Centered container (join.html's Fees heading) - the left-border
+   quote accent doesn't read right once the text itself is centered,
+   so drop the border and its compensating side padding here. */
+.section-title.container h2 {
+  border-left: none;
+  padding: 10px 0;
+}
+
+@media (max-width: 991px) {
+  .section-title.container h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 
 .section-title-2 {
@@ -1808,6 +1833,12 @@ support for no js
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* "Typical Day" section (details.html) - flat 20px margin at every
+   screen size, not just at specific breakpoints. */
+#day {
+  margin: 20px;
 }
 
 
@@ -4723,6 +4754,12 @@ blockquote3 {
     max-width: 1200px;
     margin: 0 auto;
 	align-items: center
+}
+
+@media (max-width: 991px) {
+  .join-intro {
+    max-width: 800px;
+  }
 }
 
 blockquote, blockquote p {
@@ -7901,7 +7938,7 @@ h1.pt-col-main {
   left: 18px;
   height: 100%;
   width: 4px;
-  background: var(--goldenhr2);
+  background: var(--nightfall);
 }
 @media only screen and (min-width: 991px) {
   #cd-timeline {
@@ -8440,26 +8477,18 @@ h2.portfolio-timeline-title {
 	.cd-timeline-start{
 		margin:0;
 	}
+	.cd-timeline-start-caption, .cd-timeline-start-date {
+		font-size: 22px;
+		line-height: 22px;
+	}
 	.cd-timeline-img.cd-picture {
-		font-size: 18px;
-		padding-top: 8px;
+		font-size: 38px;
+		padding-top: 10px;
 	}
-	.cd-date{
-		margin-top: 15px;
-		background: var(--starlight);
-		margin-left: -20px;
-		margin-bottom: -5px;
-		padding: 15px;
+	.cd-timeline-content .cd-date {
+		display: none;
 	}
-	.cd-date-year, .cd-date-month {
-		display:inline-block;
-		font-size:14px;
-	}
-	.cd-date-year {
-		margin-right:10px;
-		margin-bottom:0;
-	}
-	
+
 	/* #MAINTENANCE  ================================ */
 	.maintenance-icon-container {
 		margin-top:0px;
@@ -8489,6 +8518,32 @@ h2.portfolio-timeline-title {
 		position: relative;
 		right: 0;
 	}
+}
+
+/* Trailhead Process timeline (join.html) - mobile */
+@media (max-width: 480px) {
+  .heading-underline h3 {
+    font-size: 24px;
+    margin: 30px;
+  }
+  .cd-timeline-start-caption, .cd-timeline-start-date {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .cd-timeline-content h2 {
+    font-size: 24px;
+  }
+  .cd-timeline-content p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .cd-timeline-img.cd-picture {
+    font-size: 38px;
+    padding-top: 12px;
+  }
+  .cd-timeline-content .cd-date {
+    display: none;
+  }
 }
 
 /******************************************************************************
@@ -11661,9 +11716,9 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     line-height: 38px;
   }
   .fes7-text-cont h1.find {
-    font-size: 32px;
-    line-height: 38px;
-  }	
+    font-size: 28px;
+    line-height: 36px;
+  }
   .quote4 {
     font-size: 22px;
     line-height: 28px;
@@ -11673,8 +11728,8 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     line-height: 32px;
   }
 .fes7-text-cont p.find {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 
@@ -11685,10 +11740,14 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     margin-bottom: 20px;
   }
   .fes7-text-cont h1.find {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 24px;
+    line-height: 30px;
     margin-bottom: 20px;
-  }	
+  }
+  .fes7-text-cont p.find {
+    font-size: 16px;
+    line-height: 20px;
+  }
   .quote4 {
     font-size: 16px;
     line-height: 20px;
@@ -11943,8 +12002,22 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   font-optical-sizing: auto;
   font-size:20px;
   line-height: 24px;
-  font-weight: 500;	
+  font-weight: 500;
   font-style:normal;
+}
+
+@media (max-width: 991px) {
+  .section-title p {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title p {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 
@@ -12018,6 +12091,13 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
    .p-100-cont's own values for now - a pure rename, no visual change. */
 .conditions-cont { padding-top: 100px; padding-bottom: 100px; }
 .conditions-cont2 { padding-top: 40px; padding-bottom: 40px; }
+
+@media (min-width: 992px) {
+  .conditions-cont2 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 
 @media only screen and (max-width : 768px) {
 	.p-90-cont, .p-100-cont, .p-110-cont{ padding-top:80px; padding-bottom:80px;}
