@@ -3372,9 +3372,9 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .contact-title-cont {
   /* Reserves space under the fixed header (no hero on this page to do
      it implicitly) - matched exactly to the header's own real height
-     at each tier (104px/94px/84px) so the map section below sits
+     at each tier (112px/94px/84px) so the map section below sits
      flush against the header's bottom edge, no gap. */
-  padding-top:104px;
+  padding-top:112px;
   padding-bottom:0;
 }
 
@@ -4473,7 +4473,7 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 }
 
 .logo-img {
-  height: 72px;
+  height: 80px;
   -webkit-transition: height .4s ease 0s;
   -o-transition: height .4s ease 0s;
   transition: height .4s ease 0s;
