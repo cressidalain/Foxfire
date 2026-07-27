@@ -3485,6 +3485,13 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 	background-color:var(--afterglow);
 	padding:0;
 	color: var(--starlight);
+	/* The Google map that used to sit beside this (col-md-3) is
+	   commented out (see initMap() note in main.js - it depends on an
+	   external Google Maps API key this environment can't verify), so
+	   with nothing next to it, it was floating left and leaving the
+	   rest of the mega-menu dropdown empty on the right. Float it right
+	   instead so it isn't stranded in a mostly-empty panel. */
+	float: right;
 }
 .menu-map-container {
 	padding:0 !important;
