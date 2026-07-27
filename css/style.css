@@ -3371,23 +3371,22 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 
 .contact-title-cont {
   /* Reserves space under the fixed header (no hero on this page to do
-     it implicitly) - sized to the header's own real height at each
-     tier (123px/94px/84px measured, now that the logo matches every
-     other page's size instead of the old contact-only larger one)
-     plus a little breathing room. */
-  padding-top:140px;
+     it implicitly) - matched exactly to the header's own real height
+     at each tier (104px/94px/84px) so the map section below sits
+     flush against the header's bottom edge, no gap. */
+  padding-top:104px;
   padding-bottom:0;
 }
 
 @media (max-width: 1024px) {
   .contact-title-cont {
-    padding-top: 111px;
+    padding-top: 94px;
   }
 }
 
 @media (max-width: 500px) {
   .contact-title-cont {
-    padding-top: 100px;
+    padding-top: 84px;
   }
 }
 
@@ -4522,7 +4521,7 @@ header.affix .logo .logo-img {
 	transition: all .4s ease 0s;
 }
 .header.no-transparent .logo-2 {
-	padding:26px 0 25px 0;
+	padding:16px 0 16px 0;
 }
 
 /* #BREADCRUMB 
