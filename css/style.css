@@ -1197,8 +1197,26 @@ support for no js
 =====================================================*/
 .logo-row {
 	position:relative;
-	width:133px;
+	/* Was a hardcoded 133px, matching the logo's compact ~1.85:1
+	   on-screen ratio at the old 72px height (.logo-img has
+	   max-width:100%, so anything wider than this got squeezed back
+	   down rather than actually scaling up). Kept the same ratio here,
+	   recalculated for the new 80px desktop height (80 * 1.85 ≈ 148px)
+	   so the logo just gets uniformly bigger instead of rendering at
+	   the SVG's true, much wider file proportions (which overlaps the
+	   nav links between roughly 1025-1140px). */
+	width:148px;
 	z-index:1;
+}
+/* Matches the same ~1.85:1 ratio for the smaller 50px affixed desktop
+   logo (50 * 1.85 ≈ 92px) - without this, .logo-img's max-width:100%
+   would cap it against the wider 148px row above instead, rendering
+   it less compactly than the unscrolled state and making the ratio
+   visibly shift mid-transition while scrolling. */
+@media (min-width: 1025px) {
+  .affix .logo-row {
+    width: 92px;
+  }
 }
 .header-transporent-bg-black{
   background:var(--nightfall);
