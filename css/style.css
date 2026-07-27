@@ -1020,8 +1020,8 @@ support for no js
 }
 .norm-16-wide{
 	font-family: 'Rosarivo', Georgia, serif;
+	font-optical-sizing: auto;
 	font-size: 16px;
-	font-weight:bold;
 	line-height: 18px;
 	font-weight: 300;
     letter-spacing:2px;
@@ -1245,7 +1245,8 @@ support for no js
 }
 
 .line-3-100{
-	margin-top:15px;
+	margin-top:10px;
+	margin-bottom: 10px;
 	height:3px;
 	width:100px;
 	background:var(--afterglow);
@@ -1418,6 +1419,7 @@ support for no js
 .title-fs-45 {
 	color: var(--midnight-pine);
 	font-family:  ‘Rosarivo’, Georgia, serif;
+	font-optical-sizing: auto;
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 300;
@@ -1426,6 +1428,7 @@ support for no js
 .title-fs-20 {
 	color: var(--midnight-pine);
 	font-family: 'Crimson Pro', Georgia, serif;
+	  font-optical-sizing: auto;
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 300;
@@ -1497,21 +1500,32 @@ support for no js
 }
 .fes4-title-cont h3, .title-18 {
   font-family: "Rosarivo", Georgia, serif;
+  font-optical-sizing: auto;	
   color: var(--midnight-pine);
   font-weight: 300;
   font-size: 18px;
   margin: 0;
 }
+
+
 .section-title {
-  margin:0;
-  padding:22px 25px 24px 25px;
-  font-family: "Rosarivo", Georgia, serif;
-	font-weight:300;
-	font-size:30px;
-	line-height:36px;
-	color:var(--midnight-pine); 
-  border-left:var(--afterglow) 2px solid;
+  padding-bottom: 30px;
 }
+
+
+.section-title h2 {
+  font-family: "Rosarivo", Georgia, serif;
+  font-weight: 400;
+  font-size:28px;
+  line-height:36px;
+  font-optical-sizing: auto;
+  color:var(--goldenhr1); 
+  border-left:var(--goldenhr4) 3px solid;
+  margin-bottom:20px;	
+  padding:10px 25px 10px 25px;
+	
+}
+
 .section-title-2 {
   margin:0;
   padding:25px 25px 27px 25px;
@@ -1526,12 +1540,12 @@ support for no js
   margin:0;
   padding:15px 20px 17px 23px;
   font-family: "Rosarivo", Georgia, serif;
-	font-weight:300;
-	font-size:23px;
+  font-weight:300;
+  font-size:23px;
   font-weight:400;
   letter-spacing:3px;
-	line-height:32px;
-	color:var(--midnight-pine); 
+  line-height:32px;
+  color:var(--midnight-pine); 
   border-left:var(--nightfall) 2px solid;
 }
 
@@ -2822,6 +2836,11 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   font-weight:600;
 }
 
+.blog-main-posts{
+  align-items: center;
+
+}
+
 .blog-main-posts .post-prev-img{
   margin-bottom:30px;
 }
@@ -3326,6 +3345,12 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   padding-top:135px;
   padding-bottom:65px;
 }
+
+.contact-title-cont {
+  padding-top:130px;
+  padding-bottom:0;
+}
+
 .page-title {
   margin-bottom:20px;
   font-size: 24px;
@@ -3447,11 +3472,11 @@ ul.contact-list li{
 	min-height: 46px;
 }
 .menu-contact-info .contact-list .a-mail {
-	color:#fff !important;
+	color:var(--starlight) !important;
 	padding:0 !important;
 }
 .a-mail:hover {
-	color:#414146 !important;
+	color: var(--nightfall) !important;
 	background:none !important;
 }
 .icon_mail_alt.main-menu-contact-icon {
@@ -3537,28 +3562,27 @@ label.error {
 #contactSuccess, #contactError{
 	margin-top:15px;
 	margin-bottom:0px;
-  border:none;
+   border:none;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   text-align: center;
 }
 input, textarea, select, .login-select, .controled{
   border:none;
-	border-bottom: 1px solid #a6a7a9; 
+	border-bottom: 1px solid var(--starlight); 
 	border-radius: 0px;
-  background:transparent;
-	color: var(--nightfall);
+	color: var(--starlight);
 	font-size: 14px;
 	margin: 0;
 	outline: medium none;
-	padding: 8px 20px 8px 0;
+	padding: 8px 20px 8px 20px;
 }
 .input-border {
-  border: 1px solid #dedede; 
+  border: 1px solid var(--starlight); 
   padding:9px 15px  ;
 }
 select.input-border {
-  border: 1px solid #dedede; 
+  border: 1px solid var(--starlight); 
   padding:9px 20px 9px 10px ;
 }
 .w-100 {
@@ -3571,13 +3595,13 @@ select.input-border {
 :-ms-input-placeholder, .controled:-ms-input-placeholder      {color:var(--nightfall);}
 
 
-:focus::-webkit-input-placeholder {color: #a6a7a9;}
-:focus::-moz-placeholder          {color:#a6a7a9;}/* Firefox 19+*/
-:focus:-moz-placeholder           {color:#a6a7a9;}/* Firefox 18- */
-:focus:-ms-input-placeholder      {color:#a6a7a9;}
+:focus::-webkit-input-placeholder {color: var(--starlight);}
+:focus::-moz-placeholder          {color:var(--starlight);}/* Firefox 19+*/
+:focus:-moz-placeholder           {color:var(--starlight);}/* Firefox 18- */
+:focus:-ms-input-placeholder      {color:var(--starlight);}
 
 .controled:focus, .nl-email-input:focus {
-  border-color:var(--nightfall);
+  border-color:var(--starlight);
 }
 .leave-comment-cont {
   padding:10px 40px 60px 40px;
@@ -4681,7 +4705,7 @@ blockquote {
   padding: 10px 20px;
   padding-left:30px;
   margin: 0 0 40px;
-  border-left: 3px solid var(--afterglow);
+ border-left: 3px solid var(--afterglow);
 }
 
 blockquote2 {
@@ -4689,6 +4713,16 @@ blockquote2 {
   padding-left:30px;
   margin: 0 0 20px 20px;
   border-left: 2px solid var(--astral);
+}
+
+blockquote3 {
+  padding: 10px 20px;
+}
+
+.join-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+	align-items: center
 }
 
 blockquote, blockquote p {
@@ -5741,6 +5775,7 @@ h2 {
 	margin: 27px 0 18px 0;
 }
 h3 {
+	
 	font-size: 24px;
 	letter-spacing: normal;
 	line-height: 33px;
@@ -5795,9 +5830,23 @@ h6 {
 .h5-line:before, .h6-line:before {
 	top: 55%;
 }
+
+.heading-underline h3 {
+	font-family: 'Rosarivo', Georgia, serif;
+	font-size: 28px;
+	line-height: 28px;
+	font-optical-sizing: auto;
+	color:var(--midnight-pine);
+	font-weight: bold;
+	text-wrap: balance;
+	text-align: center;
+	margin: 30px 0;
+}
+
 .heading-underline h1, .heading-underline h2, .heading-underline h3, .heading-underline h4, .heading-underline h5, .heading-underline h6{
-	border-bottom: 1px solid var(--starlight);
-	padding-bottom:20px;
+	border-bottom: 2px solid var(--goldenhr2);
+	margin: 50px 100px;
+	padding: 0 0 25px;
 }
 .heading-underline h2{
 	padding-bottom:20px;
@@ -7791,7 +7840,7 @@ h1.pt-col-main {
 	clear: both;
 	width: 250px;
 	padding: 15px;
-	border: 3px solid #E5E5E5;
+	border: 3px solid var(--goldenhr2);
 	margin: 0 auto 10px;
 	background: var(--starlight);
 	z-index: 1;
@@ -7800,21 +7849,28 @@ h1.pt-col-main {
 .cd-final {
 	margin-bottom:0;
 }
+
 .cd-timeline-start-caption, .cd-timeline-start-date  {
-	font-family: 'Figtree',Arial,Helvetica,sans-serif;
+  font-family: "Rosarvio", Georgia, serif;
+  font-size: 22px;
+  font-weight:400;
+  line-height:24px;
+  color:var(--midnight-pine); 
 }
-.cd-timeline-start-caption {
-	color: var(--nightfall);
-	font-size:20px;
+
+.cd-timeline-start-date  {
+	color: var(--afterglow);
+	font-size:22px;
+	font-weight: 600;
 	padding-top:10px;
 	padding-bottom:10px;
-}
-.cd-timeline-start-date  {
 	margin-bottom:5px;
 }
+
 .cd-timeline-content h2 {
-	line-height:36px;
-	margin-bottom:0;
+   font-family: "Crimson Pro", Georgia, serif;
+   line-height:28px;
+   margin-bottom: 5px;
 }
 /*****	#MODULES - reusable parts of our design	*****/
 .cd-container {
@@ -7845,7 +7901,7 @@ h1.pt-col-main {
   left: 18px;
   height: 100%;
   width: 4px;
-  background: #e5e5e5;
+  background: var(--goldenhr2);
 }
 @media only screen and (min-width: 991px) {
   #cd-timeline {
@@ -7887,8 +7943,8 @@ h1.pt-col-main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 .cd-timeline-img img {
@@ -7902,10 +7958,10 @@ h1.pt-col-main {
   margin-top: -12px;
 }
 .cd-timeline-img.cd-picture {
-  background: #dfdfdf;
+  background: var(--afterglow);
   text-align:center;
-  font-size:24px;
-  padding-top: 16px;
+  font-size: 40px;
+  padding-top: 10px;
   color:var(--starlight);
 }
 .cd-timeline-img.cd-movie {
@@ -7973,46 +8029,71 @@ h1.pt-col-main {
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background: #f3f3f3;
+  background: var(--nightfall);
   padding: 20px;
 }
+.cd-timeline-content2 {
+  position: relative;
+  margin-left: 60px;
+  background: none;
+  padding: 20px;
+}
+
 .cd-timeline-content:after {
   content: "";
   display: table;
   clear: both;
 }
 .cd-timeline-content h2 {
-	font-size:20px;
-  line-height: 28px;
+	font-size:28px;
+	color: var(--goldenhr4);
+    line-height: 28px;
+	font-weight: 300;
 	margin-top:0;
 	margin-bottom:10px;
 }
+
+.cd-timeline-content p {
+	font-size:20px;
+	font-weight: 400;
+	color: var(--starlight);
+    line-height: 24px;
+	margin-top:0;
+	margin-bottom:10px;
+}
+
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
 }
 .cd-timeline-content .cd-read-more {
   float: right;
   padding: .8em 1em;
-  background: #acb7c0;
-  color: white;
+  background: var(--afterglow);
+  color: var(--starlight);
   border-radius: .25em;
 }
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;
+  background-color: var(--nightfall)
 }
 .cd-timeline-content .cd-date {
   float: left;
 }
 .cd-date-year, .cd-date-month {
-	display:block;
-	font-family: 'Figtree',Arial,Helvetica,sans-serif;
-	font-weight:400;
+display:block;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-weight: 600;
+  font-weight:600;
+  line-height:32px;
+  color:var(--midnight-pine); 
 }
 .cd-date-year {
-	font-size:20px;
+ font-size: 32px;
 }
+
 .cd-date-month {
-	font-size:14px;
+	color:var(--goldenhr4);
+	font-size:20px;
+    font-style: italic;
 }
 .cd-timeline-content::before {
   content: '';
@@ -8021,8 +8102,8 @@ h1.pt-col-main {
   right: 100%;
   height: 0;
   width: 0;
-  border: 7px solid transparent;
-  border-right: 7px solid #f3f3f3;
+  border: 10px solid transparent;
+  border-right: 7px solid var(--nightfall);
 }
 h2.portfolio-timeline-title {
 	margin:10px 0 0 0;
@@ -8038,7 +8119,7 @@ h2.portfolio-timeline-title {
     top: 24px;
     left: 100%;
     border-color: transparent;
-    border-left-color: #f3f3f3;
+    border-left-color: var(--nightfall);
   }
   .cd-timeline-content .cd-read-more {
     float: left;
@@ -8057,7 +8138,7 @@ h2.portfolio-timeline-title {
     left: auto;
     right: 100%;
     border-color: transparent;
-    border-right-color: #f3f3f3;
+    border-right-color: var(--starlight);
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
     float: right;
@@ -11520,6 +11601,20 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 	text-wrap: balance;
 }
 
+.fes7-text-cont h1.find {
+	font-family: 'Rosarivo', Georgia, serif;
+	font-size: 28px;
+	line-height: 38px;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	color:var(--midnight-pine);
+	text-wrap: balance;
+	padding: 5px 20px;
+    padding-left: 30px;
+    margin: 0 0 25px 0;
+    border-left: 3px solid var(--afterglow);
+}
+
 
 .quote4 {
   font-family: 'Crimson Pro', Georgia, serif;
@@ -11546,6 +11641,15 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   color:var(--goldenhr1);
 }
 
+.fes7-text-cont p.find {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 22px;
+  line-height: 28px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color:var(--nightfall);
+}
+
 /* Breakpoint overrides for the three rules just above - placed here,
    after their unconditional base rules, so they actually win the
    cascade (equal selector specificity means source order decides, and
@@ -11556,11 +11660,19 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     font-size: 32px;
     line-height: 38px;
   }
+  .fes7-text-cont h1.find {
+    font-size: 32px;
+    line-height: 38px;
+  }	
   .quote4 {
     font-size: 22px;
     line-height: 28px;
   }
   .fes7-text-cont p.conditions {
+    font-size: 20px;
+    line-height: 32px;
+  }
+.fes7-text-cont p.find {
     font-size: 20px;
     line-height: 32px;
   }
@@ -11572,6 +11684,11 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     line-height: 38px;
     margin-bottom: 20px;
   }
+  .fes7-text-cont h1.find {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }	
   .quote4 {
     font-size: 16px;
     line-height: 20px;
@@ -11581,6 +11698,10 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
     font-size: 16px;
     line-height: 24px;
   }
+  .fes7-text-cont p.conditions {
+    font-size: 16px;
+    line-height: 24px;
+  }	
 }
 
 
@@ -11798,22 +11919,41 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .section-title2 h2{
 	margin-top:0;
 	font-family: 'Rosarivo', Georgia, serif;
-	font-size: 30px;
+	font-size: 28px;
 	line-height: 32px;
 	font-optical-sizing: auto;
 	color:var(--midnight-pine);
 	margin-bottom: 20px;
-	font-weight:normal;
+	font-weight:400;
 }
 
 .section-title2 p{
   color:var(--nightfall);
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: 'Figtree',Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
-  font-size:22px;
-  line-height: 26px;
-  font-weight: 300;	
+  font-size:20px;
+  line-height: 24px;
+  font-weight: 400;	
   font-style:normal;
+}
+
+.section-title p {
+  color:var(--nightfall);
+  font-family: 'Figtree',Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-size:20px;
+  line-height: 24px;
+  font-weight: 500;	
+  font-style:normal;
+}
+
+
+.fees-box-l{
+	margin-right: 20px;
+}
+
+.fees-box-r{
+	paddin-left: 20px;
 }
 
 .port-filter-2 a{
@@ -11877,6 +12017,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
    so tuning its padding can never affect any other section. Matches
    .p-100-cont's own values for now - a pure rename, no visual change. */
 .conditions-cont { padding-top: 100px; padding-bottom: 100px; }
+.conditions-cont2 { padding-top: 40px; padding-bottom: 40px; }
 
 @media only screen and (max-width : 768px) {
 	.p-90-cont, .p-100-cont, .p-110-cont{ padding-top:80px; padding-bottom:80px;}
@@ -11884,6 +12025,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 	.pt-160-b-120-cont{ padding-top:100px; padding-bottom:70px;}
 	.pt-120-b-120-cont{ padding-top:100px; padding-bottom:70px;}
 	.conditions-cont { padding-top: 80px; padding-bottom: 80px; }
+	.conditions-cont2 { padding-top: 40px; padding-bottom: 40px; }
 	.mt-sm-50{margin-top:50px}
 	.mt-sm-60{margin-top:60px}
 	.pt-sm-50{padding-top:50px}
@@ -11892,6 +12034,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 
 @media only screen and (max-width : 480px) {
 	.conditions-cont { padding-top: 40px; padding-bottom: 40px; }
+	.conditions-cont2 {padding-top: 20px; padding-bottom: 20px;}
 }
 .video-ads-text-cont.video-ads-text-black {
   color: var(--nightfall);
