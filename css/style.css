@@ -1836,8 +1836,13 @@ support for no js
 }
 
 /* "Typical Day" section (details.html) - flat 20px margin at every
-   screen size, not just at specific breakpoints. */
+   screen size, not just at specific breakpoints. .page-section sets
+   width:100%, so margin alone would push this 20px past the viewport
+   on each side (confirmed: caused a 20px horizontal scrollbar) -
+   width:calc(100% - 40px) keeps the box+margin the same total width
+   as its siblings. */
 #day {
+  width: calc(100% - 40px);
   margin: 20px;
 }
 
