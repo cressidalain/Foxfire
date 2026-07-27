@@ -186,7 +186,6 @@ $(document).ready(function(){
   initMenu();
   initMagnPopup();
   initCounters();
-  initMap();
   initPageSliders();
   initImgHeight();
   initLeftMenu();
@@ -627,47 +626,6 @@ function initMasonry(){
       $(".masonry").masonry();
     });
     
-  })(jQuery);
-}
-
-/* ---------------------------------------------
- GOOGLE MAP
- --------------------------------------------- */
-var gmMapDiv = $("#google-map");
-
-function initMap(){
-  (function($){
-    
-    if (gmMapDiv.length) {
-
-      var gmLat = gmMapDiv.attr("data-latitude"),
-          gmLong = gmMapDiv.attr("data-longitude");
-
-      gmMapDiv.gmap3({
-          action: "init",
-          marker: {
-              latLng:[gmLat, gmLong],
-              options: {
-                  icon: "images/loc-marker.png"
-              }
-          },
-          map: {
-              options: {
-                  zoom: 18,
-                  zoomControl: true,
-                  zoomControlOptions: {
-                      style: google.maps.ZoomControlStyle.SMALL
-                  },
-                  mapTypeControl: false,
-                  scaleControl: false,
-                  scrollwheel: false,
-                  streetViewControl: false,
-                  draggable: true,
-                  styles:[ { stylers: [{ invert_lightness: true }, { saturation: -100 }, { lightness: 10 }] } ]
-              }
-          }
-      });
-    }
   })(jQuery);
 }
 
