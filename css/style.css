@@ -3372,21 +3372,22 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .contact-title-cont {
   /* Reserves space under the fixed header (no hero on this page to do
      it implicitly) - sized to the header's own real height at each
-     tier (141px/108px/96px measured, with the larger contact-page-only
-     logo) plus a little breathing room. */
-  padding-top:158px;
+     tier (123px/94px/84px measured, now that the logo matches every
+     other page's size instead of the old contact-only larger one)
+     plus a little breathing room. */
+  padding-top:140px;
   padding-bottom:0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .contact-title-cont {
-    padding-top: 125px;
+    padding-top: 111px;
   }
 }
 
 @media (max-width: 500px) {
   .contact-title-cont {
-    padding-top: 112px;
+    padding-top: 100px;
   }
 }
 
@@ -3473,6 +3474,13 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 
 /* #CONTACT MENU
 =====================================================*/
+/* Flex row so the contact-info and map columns always stretch to the
+   same height (their content lengths differ - wrapped address text,
+   fixed map size) instead of floating independently and leaving a
+   gap of bare dropdown background under whichever one is shorter. */
+.menu-sub-container {
+	display: flex;
+}
 .menu-contact-info {
 	background-color:var(--afterglow);
 	padding:0;
@@ -3480,10 +3488,6 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 }
 .menu-map-container {
 	padding:0 !important;
-	height: 280px;
-	/* .menu-contact-info has its own margin-top:-10px below - match it
-	   so the map's top edge lines up with the contact box's top edge. */
-	margin-top: -10px;
 }
 .menu-map-container iframe {
 	display: block;
@@ -3531,10 +3535,6 @@ ul.contact-list li{
 .icon_mail_alt.main-menu-contact-icon {
 	padding-top:10px;
 	padding-bottom:14px;
-}
-.menu-contact-info {
-	margin-top: -10px;
-	margin-bottom: -10px;
 }
 .main-menu-contact-icon {
   display: block;
@@ -4483,15 +4483,6 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 .affix .logo-img {
   height: 42px;
 }
-/* .no-transparent's own larger logo (below) is a bare two-class
-   selector at the same specificity as .affix .logo-img above, and it
-   comes later in the file, so it was winning even once affixed -
-   contact.html/FAQ.html's header never shrank on scroll. This compound
-   selector outranks both, so it shrinks to the same 42px every other
-   page's header uses once affixed. */
-.affix.no-transparent .logo-img {
-  height: 42px;
-}
 
 @media (max-width: 1024px) {
   .logo-img {
@@ -4502,25 +4493,6 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 @media (max-width: 500px) {
   .logo-img {
     height: 50px;
-  }
-}
-
-/* contact.html's header is the only one with .no-transparent (it has
-   no hero to sit over, so it's solid from the start) - scoping the
-   larger logo to that class keeps every other page's logo untouched. */
-.no-transparent .logo-img {
-  height: 90px;
-}
-
-@media (max-width: 1024px) {
-  .no-transparent .logo-img {
-    height: 74px;
-  }
-}
-
-@media (max-width: 500px) {
-  .no-transparent .logo-img {
-    height: 62px;
   }
 }
 
@@ -11643,12 +11615,6 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .menu-open .hiding-logo.logo-img {
   opacity:1;
 }
-/* Same as .affix above, but for hovering a nav item open on desktop
-   before the page has scrolled far enough to affix. */
-.header:has(#main-menu .parent:hover > .sub) .hiding-logo.logo-img {
-  opacity:1;
-}
-
 /* #HEADER BELOW
 ***************************************************/ 
 .nav-below-sticky-wrapper.is-sticky {
