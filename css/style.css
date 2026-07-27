@@ -3481,6 +3481,9 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .menu-map-container {
 	padding:0 !important;
 	height: 280px;
+	/* .menu-contact-info has its own margin-top:-10px below - match it
+	   so the map's top edge lines up with the contact box's top edge. */
+	margin-top: -10px;
 }
 .menu-map-container iframe {
 	display: block;
@@ -4374,6 +4377,13 @@ background:none;
    opening the hamburger at the top of the page doesn't leave a
    transparent gap above the (always-solid) dropdown panel below it. */
 .header.black-header.menu-open .header-wrapper {
+	background: var(--nightfall);
+}
+/* Same issue, desktop version: hovering any nav item (incl. the
+   Contact megamenu) reveals a .sub panel that's always solid
+   (#main-menu .sub{background}), but before scrolling the header row
+   above it is still transparent with no .affix class to fix it. */
+.header.black-header:has(#main-menu .parent:hover > .sub) .header-wrapper {
 	background: var(--nightfall);
 }
 #nav-below.header {
@@ -11622,6 +11632,11 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 /* Same as .affix above, but for the mobile/tablet menu-open state
    before the page has scrolled far enough to affix. */
 .menu-open .hiding-logo.logo-img {
+  opacity:1;
+}
+/* Same as .affix above, but for hovering a nav item open on desktop
+   before the page has scrolled far enough to affix. */
+.header:has(#main-menu .parent:hover > .sub) .hiding-logo.logo-img {
   opacity:1;
 }
 
