@@ -4333,6 +4333,13 @@ background:none;
 	-o-transition: height .4s ease;
 	transition: height .4s ease;
 }
+/* Matches the bigger 50px affixed logo on desktop (see .affix .logo-img
+   above): 50px logo + 18px .logo-2 padding = 68px. */
+@media (min-width: 1025px) {
+  .affix.header {
+    height: 68px;
+  }
+}
 .header-big-offset {
   padding-top:136px;
 }
@@ -4481,6 +4488,17 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
    affix keeps 42 + 18 = 60px, matching the header's own box exactly. */
 .affix .logo-img {
   height: 42px;
+}
+
+/* Bigger affixed logo on desktop only - grow the header's own fixed
+   box (see .affix.header height below) by the same amount so it still
+   matches the logo + .logo-2's 18px padding exactly and doesn't
+   overflow past its own edge like the base case above. Mobile/tablet
+   keep the original 42px. */
+@media (min-width: 1025px) {
+  .affix .logo-img {
+    height: 50px;
+  }
 }
 
 @media (max-width: 1024px) {
