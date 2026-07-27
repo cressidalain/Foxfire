@@ -4483,6 +4483,15 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
 .affix .logo-img {
   height: 42px;
 }
+/* .no-transparent's own larger logo (below) is a bare two-class
+   selector at the same specificity as .affix .logo-img above, and it
+   comes later in the file, so it was winning even once affixed -
+   contact.html/FAQ.html's header never shrank on scroll. This compound
+   selector outranks both, so it shrinks to the same 42px every other
+   page's header uses once affixed. */
+.affix.no-transparent .logo-img {
+  height: 42px;
+}
 
 @media (max-width: 1024px) {
   .logo-img {
