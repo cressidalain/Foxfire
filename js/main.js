@@ -630,10 +630,10 @@ function initMap(){
     
     if (gmMapDiv.length) {
   
-      var gmCenterAddress = gmMapDiv.attr("data-address"),
-          gmMarkerAddress = gmMapDiv.attr("data-address"),
-          gmLat = gmMapDiv.attr("data-latitude"),
-          gmLong = gmMapDiv.attr("data-longitude");
+      var gmCenterAddress = gmMapDiv.attr("24 Clapboard Ridge Rd, Danbury, CT 06811"),
+          gmMarkerAddress = gmMapDiv.attr("24 Clapboard Ridge Rd, Danbury, CT 06811"),
+          gmLat = gmMapDiv.attr("41.408734"),
+          gmLong = gmMapDiv.attr("-73.468251");
       
       gmMapDiv.gmap3({
           action: "init",
