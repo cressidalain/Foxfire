@@ -4403,11 +4403,13 @@ background:none;
 .header.black-header.menu-open .header-wrapper {
 	background: var(--nightfall);
 }
-/* Same issue, desktop version: hovering any nav item (incl. the
-   Contact megamenu) reveals a .sub panel that's always solid
-   (#main-menu .sub{background}), but before scrolling the header row
-   above it is still transparent with no .affix class to fix it. */
-.header.black-header:has(#main-menu .parent:hover > .sub) .header-wrapper {
+/* Same issue, desktop version, but only for the Contact megamenu -
+   its dropdown is a full-width map+info panel (always solid via
+   #main-menu .sub{background}) tall enough that the transparent
+   header row above it read as a visible gap before scrolling. The
+   small text-only dropdowns on the other nav items don't have that
+   problem and should stay transparent like the rest of the header. */
+.header.black-header:has(#main-menu .megamenu:hover > .sub) .header-wrapper {
 	background: var(--nightfall);
 }
 #nav-below.header {
