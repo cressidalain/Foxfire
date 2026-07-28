@@ -529,7 +529,7 @@ body {
 	font-size: 25px;
 	/* Kept in sync with #main-menu .navbar .nav > li > a's padding-top
 	   above - same logo, same header, same math. */
-	padding:44px 3px 5px 3px;
+	padding:36px 3px 5px 3px;
 	margin: 0 0 25px 12px;
 	color: var(--starlight);
 }
@@ -542,7 +542,7 @@ body {
 }
 
 .header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
-	padding:44px 3px 5px 3px;
+	padding:36px 3px 5px 3px;
 	margin: 0 0 25px 12px;
 	color:var(--afterglow);
 }
@@ -565,7 +565,7 @@ body {
   .affix.header-1 #main-menu .navbar .nav > li.header-icon > a,
   .affix.header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
     margin-bottom: 25px;
-    padding: 44px 3px 5px 3px;
+    padding: 36px 3px 5px 3px;
   }
 }
 
@@ -3386,9 +3386,9 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
 .contact-title-cont {
   /* Reserves space under the fixed header (no hero on this page to do
      it implicitly) - matched exactly to the header's own real height
-     at each tier (112px/94px/84px) so the map section below sits
+     at each tier (96px/94px/84px) so the map section below sits
      flush against the header's bottom edge, no gap. */
-  padding-top:112px;
+  padding-top:96px;
   padding-bottom:0;
 }
 
@@ -3875,9 +3875,10 @@ select.input-border {
 }
 #main-menu .navbar .nav > li > a {
 	/* padding-top matches the logo's vertical center: both header
-	   types now use the same .logo-2 padding (16px/16px) and 80px
-	   logo, so one shared value covers everything. */
-	padding:46px 3px 5px 3px;
+	   types now use the same .logo-2 padding (25px/25px) and the same
+	   width:200px/height:auto logo, so one shared value covers
+	   everything. */
+	padding:38px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,0);
 	color:var(--starlight);
@@ -3893,11 +3894,11 @@ select.input-border {
 @media (min-width: 1025px) {
   .affix.header-1 #main-menu .navbar .nav > li > a {
     margin-bottom: 17px;
-    padding: 46px 3px 5px 3px;
+    padding: 38px 3px 5px 3px;
   }
 }
 .header-1 #main-menu .navbar .nav > li.current > a {
-	padding:46px 3px 5px 3px;
+	padding:38px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,1);
 	color:var(--nightfall);
@@ -3915,7 +3916,7 @@ select.input-border {
 @media (min-width: 1025px) {
   .affix.header-1 #main-menu .navbar .nav > li.current > a {
     margin-bottom: 17px;
-    padding: 46px 3px 5px 3px;
+    padding: 38px 3px 5px 3px;
   }
 }
 .affix.header-1.black-header #main-menu .navbar .nav > li.current > a{
@@ -4075,13 +4076,13 @@ select.input-border {
 /* Without an explicit top, .sub (position:absolute) falls back to the
    position it would have had in normal flow - which is directly under
    the CONTACT link's own (shorter) box, not the full header. Since
-   the header is always 112px tall on desktop now (no more
-   affix/unscrolled size difference), anchor it there explicitly so
-   the dropdown's top edge is always flush with the header's real
-   bottom edge instead of a few px short of it. */
+   the header is always 96px tall on desktop now (no more affix/
+   unscrolled size difference), anchor it there explicitly so the
+   dropdown's top edge is always flush with the header's real bottom
+   edge instead of a few px short of it. */
 @media (min-width: 1025px) {
   #main-menu .megamenu > .sub {
-    top: 112px;
+    top: 96px;
   }
 }
 nav ul {
@@ -4378,11 +4379,11 @@ background:none;
 	transition: height .4s ease;
 }
 /* No size change between unscrolled and affixed on desktop - matches
-   the unscrolled header's own height (80px logo + 16px/16px .logo-2
-   padding) exactly, so nothing needs to transition. */
+   the unscrolled header's own height (200px-wide/auto-height logo +
+   25px/25px .logo-2 padding ≈ 96px) exactly, so nothing transitions. */
 @media (min-width: 1025px) {
   .affix.header {
-    height: 112px;
+    height: 96px;
   }
 }
 .header-big-offset {
@@ -4520,33 +4521,34 @@ header.affix .logo-2 {
 	transition: all .4s ease 0s;
 }
 /* No size change between unscrolled and affixed on desktop - same
-   16px/16px as the unscrolled .logo-2 padding. */
+   25px/25px as the unscrolled .logo-2 padding. */
 @media (min-width: 1025px) {
   header.affix .logo-2 {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 
 .logo-img {
-  height: 80px;
+  height: 72px;
   -webkit-transition: height .4s ease 0s;
   -o-transition: height .4s ease 0s;
   transition: height .4s ease 0s;
 }
 
-/* Mobile/tablet still shrink the logo on affix (unchanged, unrelated
-   to the desktop-only "no size change" request below). */
+/* Mobile/tablet still shrink the logo on affix (unchanged). */
 .affix .logo-img {
   height: 42px;
 }
 
-/* No size transition between unscrolled and affixed on desktop - same
-   80px as the base .logo-img height, since .affix.header/.affix
-   .logo-2 above are also now unconditionally sized to match. */
+/* Desktop: width fixed at 200px, height auto (preserves the SVG's
+   real aspect ratio, no squish) - same in both unscrolled and
+   affixed states, so nothing transitions on scroll. */
 @media (min-width: 1025px) {
+  .logo-img,
   .affix .logo-img {
-    height: 80px;
+    width: 200px;
+    height: auto;
   }
 }
 
@@ -4582,12 +4584,10 @@ header.affix .logo .logo-img {
 }
 .logo-2 {
 	display: block;
-	/* 16px/16px on both header types now (used to be 33px/25px here vs
-	   16px/16px on .no-transparent, kept as two separate schemes) - one
-	   shared value means the hero pages and contact.html/FAQ.html now
-	   render an identical header, so nav-link/icon alignment (below)
-	   only needs one calibration too instead of two. */
-	padding:16px 0 16px 0;
+	/* Same 25px/25px on every page (hero pages and contact.html/
+	   FAQ.html) - the logo is now sized by width:200px/height:auto
+	   above, so both header types render identically. */
+	padding:25px 0 25px 0;
 	-webkit-transition: all .4s ease 0s;
 	-o-transition: all .4s ease 0s;
 	transition: all .4s ease 0s;
