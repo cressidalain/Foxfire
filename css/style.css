@@ -527,31 +527,24 @@ body {
 
 .header-1 #main-menu .navbar .nav > li.header-icon > a {
 	font-size: 25px;
-	/* Was 33px - matched the nav links' old padding-top before they
-	   were re-centered against the bigger logo; keep this in sync with
-	   that (see #main-menu .navbar .nav > li > a above). */
-	padding:60px 3px 5px 3px;
+	/* Kept in sync with #main-menu .navbar .nav > li > a's padding-top
+	   above - same logo, same header, same math. */
+	padding:44px 3px 5px 3px;
 	margin: 0 0 25px 12px;
 	color: var(--starlight);
-}
-.no-transparent.header-1 #main-menu .navbar .nav > li.header-icon > a {
-	padding-top: 44px;
 }
 
 .header-1.white-header #main-menu .navbar .nav > li.header-icon > a {
 	font-size: 25px;
 	padding:33px 3px 5px 3px;
 	margin: 0 0 25px 12px;
-	color:var(--nightfall); 
+	color:var(--nightfall);
 }
 
 .header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
-	padding:60px 3px 5px 3px;
+	padding:44px 3px 5px 3px;
 	margin: 0 0 25px 12px;
 	color:var(--afterglow);
-}
-.no-transparent.header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
-	padding-top: 44px;
 }
 
 .affix.header-1 #main-menu .navbar .nav > li.header-icon > a {
@@ -1206,16 +1199,10 @@ support for no js
 =====================================================*/
 .logo-row {
 	position:relative;
-	/* #main-menu-container is absolutely positioned over this same row
-	   and right-anchors its nav content ~763px from the viewport's
-	   right edge, so the logo only has (100vw - 808px) of guaranteed
-	   safe width before it reaches the nav links (808 = the row's own
-	   30px left offset + 763px nav width + a ~15px buffer). Scales up
-	   with the viewport instead of a single flat number, but never
-	   past the logo's true undistorted width at 80px tall (349px) -
-	   and never below the narrowest desktop width's safe minimum
-	   (217px, at the 1025px breakpoint right before mobile takes over). */
-	width: clamp(217px, calc(100vw - 808px), 349px);
+	/* 200px - comfortably inside the safe zone (up to ~217px even at
+	   the narrowest desktop width, 1025px, before the nav links) at
+	   every desktop width, so no viewport-based scaling is needed. */
+	width: 200px;
 	z-index:1;
 }
 /* Same formula for the smaller 50px affixed logo - its true
@@ -3887,35 +3874,25 @@ select.input-border {
 	line-height:20px;
 }
 #main-menu .navbar .nav > li > a {
-	/* padding-top was 38px, calibrated to the old smaller logo's
-	   header height - now that the logo/header have grown (see
-	   .logo-img/.logo-row above), this needs to grow with it to keep
-	   the nav text vertically centered against the logo. */
-	padding:63px 3px 5px 3px;
+	/* padding-top matches the logo's vertical center: both header
+	   types now use the same .logo-2 padding (16px/16px) and 80px
+	   logo, so one shared value covers everything. */
+	padding:46px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,0);
 	color:var(--starlight);
     letter-spacing:2px;
   background-color: transparent;
 }
-/* contact.html/FAQ.html's header uses a shorter .logo-2 padding
-   (16px vs 33px on the hero pages), so the logo sits higher and needs
-   less top padding here to stay centered with it. */
-.no-transparent #main-menu .navbar .nav > li > a {
-	padding-top: 46px;
-}
 .affix.header-1 #main-menu .navbar .nav > li > a {
 	margin-bottom: 13px;
 	padding: 20px 3px 5px 3px;
 }
 .header-1 #main-menu .navbar .nav > li.current > a {
-	padding:63px 3px 5px 3px;
+	padding:46px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,1);
 	color:var(--nightfall);
-}
-.no-transparent.header-1 #main-menu .navbar .nav > li.current > a {
-	padding-top: 46px;
 }
 .black-header #main-menu .navbar .nav > li.current > a, .header-black-white #main-menu .navbar .nav > li.current > a {
 	border-bottom: 2px solid var(--afterglow);
@@ -4575,13 +4552,15 @@ header.affix .logo .logo-img {
 }
 .logo-2 {
 	display: block;
-	padding:33px 0 25px 0;
+	/* 16px/16px on both header types now (used to be 33px/25px here vs
+	   16px/16px on .no-transparent, kept as two separate schemes) - one
+	   shared value means the hero pages and contact.html/FAQ.html now
+	   render an identical header, so nav-link/icon alignment (below)
+	   only needs one calibration too instead of two. */
+	padding:16px 0 16px 0;
 	-webkit-transition: all .4s ease 0s;
 	-o-transition: all .4s ease 0s;
 	transition: all .4s ease 0s;
-}
-.header.no-transparent .logo-2 {
-	padding:16px 0 16px 0;
 }
 
 /* #BREADCRUMB 
