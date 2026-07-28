@@ -548,6 +548,7 @@ body {
 }
 
 .affix.header-1 #main-menu .navbar .nav > li.header-icon > a {
+	/* Mobile/tablet still shrink on affix (unchanged). */
 	margin-bottom: 13px;
 	padding: 18px 3px 5px 3px;
 	color:var(--starlight);
@@ -558,6 +559,14 @@ body {
 	margin-bottom: 13px;
 	padding: 18px 3px 5px 3px;
 	color:var(--afterglow);
+}
+/* No size change between unscrolled and affixed on desktop. */
+@media (min-width: 1025px) {
+  .affix.header-1 #main-menu .navbar .nav > li.header-icon > a,
+  .affix.header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
+    margin-bottom: 25px;
+    padding: 44px 3px 5px 3px;
+  }
 }
 
 .footer-2-soc-a .footer-icon > a {
@@ -1204,15 +1213,6 @@ support for no js
 	   every desktop width, so no viewport-based scaling is needed. */
 	width: 200px;
 	z-index:1;
-}
-/* Same formula for the smaller 50px affixed logo - its true
-   undistorted width (~219px) fits inside the safe zone at every
-   desktop width, so this effectively never gets clamped down; kept
-   as a clamp() anyway for consistency and as a safety net. */
-@media (min-width: 1025px) {
-  .affix .logo-row {
-    width: clamp(180px, calc(100vw - 808px), 219px);
-  }
 }
 .header-transporent-bg-black{
   background:var(--nightfall);
@@ -3885,8 +3885,16 @@ select.input-border {
   background-color: transparent;
 }
 .affix.header-1 #main-menu .navbar .nav > li > a {
+	/* Mobile/tablet still shrink on affix (unchanged). */
 	margin-bottom: 13px;
 	padding: 20px 3px 5px 3px;
+}
+/* No size change between unscrolled and affixed on desktop. */
+@media (min-width: 1025px) {
+  .affix.header-1 #main-menu .navbar .nav > li > a {
+    margin-bottom: 17px;
+    padding: 46px 3px 5px 3px;
+  }
 }
 .header-1 #main-menu .navbar .nav > li.current > a {
 	padding:46px 3px 5px 3px;
@@ -3902,7 +3910,13 @@ select.input-border {
 .affix.header-1 #main-menu .navbar .nav > li.current > a{
   margin-bottom: 13px;
 	padding: 20px 3px 5px 3px;
-	border-color:rgba(75,78,83,.5); 
+	border-color:rgba(75,78,83,.5);
+}
+@media (min-width: 1025px) {
+  .affix.header-1 #main-menu .navbar .nav > li.current > a {
+    margin-bottom: 17px;
+    padding: 46px 3px 5px 3px;
+  }
 }
 .affix.header-1.black-header #main-menu .navbar .nav > li.current > a{
 	border-bottom: 2px solid var(--afterglow); 
@@ -4057,6 +4071,18 @@ select.input-border {
   right:0;
   width: 100%;
   z-index: 900;
+}
+/* Without an explicit top, .sub (position:absolute) falls back to the
+   position it would have had in normal flow - which is directly under
+   the CONTACT link's own (shorter) box, not the full header. Since
+   the header is always 112px tall on desktop now (no more
+   affix/unscrolled size difference), anchor it there explicitly so
+   the dropdown's top edge is always flush with the header's real
+   bottom edge instead of a few px short of it. */
+@media (min-width: 1025px) {
+  #main-menu .megamenu > .sub {
+    top: 112px;
+  }
 }
 nav ul {
 	list-style: none;
@@ -4345,16 +4371,18 @@ background:none;
 }
 .affix.header {
 	position: fixed;
+	/* Mobile/tablet still shrink on affix (unchanged). */
 	height: 60px;
 	-webkit-transition: height .4s ease;
 	-o-transition: height .4s ease;
 	transition: height .4s ease;
 }
-/* Matches the bigger 50px affixed logo on desktop (see .affix .logo-img
-   above): 50px logo + 18px .logo-2 padding = 68px. */
+/* No size change between unscrolled and affixed on desktop - matches
+   the unscrolled header's own height (80px logo + 16px/16px .logo-2
+   padding) exactly, so nothing needs to transition. */
 @media (min-width: 1025px) {
   .affix.header {
-    height: 68px;
+    height: 112px;
   }
 }
 .header-big-offset {
@@ -4483,12 +4511,21 @@ header.affix .logo {
 	-o-transition: all .4s ease 0s;
 	transition: all .4s ease 0s;
 }
-header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
+header.affix .logo-2 {
+	/* Mobile/tablet still shrink on affix (unchanged). */
 	padding-top:9px;
 	padding-bottom:9px;
 	-webkit-transition: all .4s ease 0s;
 	-o-transition: all .4s ease 0s;
 	transition: all .4s ease 0s;
+}
+/* No size change between unscrolled and affixed on desktop - same
+   16px/16px as the unscrolled .logo-2 padding. */
+@media (min-width: 1025px) {
+  header.affix .logo-2 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .logo-img {
@@ -4498,25 +4535,18 @@ header.affix  .logo-2, .header.affix.no-transparent .logo-2 {
   transition: height .4s ease 0s;
 }
 
-/* .affix.header has a fixed height:60px (see ~line 4245), but .logo-2's
-   affix padding (9px + 9px = 18px) left room for only a 42px logo. With
-   the base logo taller than that, the affixed header's real content
-   height (83px) exceeded its own 60px box, so it visually overflowed
-   past its own edge and covered the top of whatever page content sits
-   just below the fixed header once scrolled. Shrinking the logo on
-   affix keeps 42 + 18 = 60px, matching the header's own box exactly. */
+/* Mobile/tablet still shrink the logo on affix (unchanged, unrelated
+   to the desktop-only "no size change" request below). */
 .affix .logo-img {
   height: 42px;
 }
 
-/* Bigger affixed logo on desktop only - grow the header's own fixed
-   box (see .affix.header height below) by the same amount so it still
-   matches the logo + .logo-2's 18px padding exactly and doesn't
-   overflow past its own edge like the base case above. Mobile/tablet
-   keep the original 42px. */
+/* No size transition between unscrolled and affixed on desktop - same
+   80px as the base .logo-img height, since .affix.header/.affix
+   .logo-2 above are also now unconditionally sized to match. */
 @media (min-width: 1025px) {
   .affix .logo-img {
-    height: 50px;
+    height: 80px;
   }
 }
 
