@@ -527,9 +527,15 @@ body {
 
 .header-1 #main-menu .navbar .nav > li.header-icon > a {
 	font-size: 25px;
-	padding:33px 3px 5px 3px;
+	/* Was 33px - matched the nav links' old padding-top before they
+	   were re-centered against the bigger logo; keep this in sync with
+	   that (see #main-menu .navbar .nav > li > a above). */
+	padding:60px 3px 5px 3px;
 	margin: 0 0 25px 12px;
-	color: var(--starlight); 
+	color: var(--starlight);
+}
+.no-transparent.header-1 #main-menu .navbar .nav > li.header-icon > a {
+	padding-top: 44px;
 }
 
 .header-1.white-header #main-menu .navbar .nav > li.header-icon > a {
@@ -540,9 +546,12 @@ body {
 }
 
 .header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
-	padding:33px 3px 5px 3px;
+	padding:60px 3px 5px 3px;
 	margin: 0 0 25px 12px;
-	color:var(--afterglow); 
+	color:var(--afterglow);
+}
+.no-transparent.header-1 #main-menu .navbar .nav > li.header-icon:hover > a {
+	padding-top: 44px;
 }
 
 .affix.header-1 #main-menu .navbar .nav > li.header-icon > a {
