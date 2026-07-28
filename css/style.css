@@ -3878,22 +3878,35 @@ select.input-border {
 	line-height:20px;
 }
 #main-menu .navbar .nav > li > a {
-	padding:38px 3px 5px 3px;
+	/* padding-top was 38px, calibrated to the old smaller logo's
+	   header height - now that the logo/header have grown (see
+	   .logo-img/.logo-row above), this needs to grow with it to keep
+	   the nav text vertically centered against the logo. */
+	padding:63px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,0);
 	color:var(--starlight);
     letter-spacing:2px;
   background-color: transparent;
 }
+/* contact.html/FAQ.html's header uses a shorter .logo-2 padding
+   (16px vs 33px on the hero pages), so the logo sits higher and needs
+   less top padding here to stay centered with it. */
+.no-transparent #main-menu .navbar .nav > li > a {
+	padding-top: 46px;
+}
 .affix.header-1 #main-menu .navbar .nav > li > a {
 	margin-bottom: 13px;
 	padding: 20px 3px 5px 3px;
 }
 .header-1 #main-menu .navbar .nav > li.current > a {
-	padding:38px 3px 5px 3px;
+	padding:63px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,1);
-	color:var(--nightfall); 
+	color:var(--nightfall);
+}
+.no-transparent.header-1 #main-menu .navbar .nav > li.current > a {
+	padding-top: 46px;
 }
 .black-header #main-menu .navbar .nav > li.current > a, .header-black-white #main-menu .navbar .nav > li.current > a {
 	border-bottom: 2px solid var(--afterglow);
