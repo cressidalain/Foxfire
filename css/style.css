@@ -1206,25 +1206,25 @@ support for no js
 =====================================================*/
 .logo-row {
 	position:relative;
-	/* Was a hardcoded 133px, matching the logo's compact ~1.85:1
-	   on-screen ratio at the old 72px height (.logo-img has
-	   max-width:100%, so anything wider than this got squeezed back
-	   down rather than actually scaling up). Kept the same ratio here,
-	   recalculated for the new 80px desktop height (80 * 1.85 ≈ 148px)
-	   so the logo just gets uniformly bigger instead of rendering at
-	   the SVG's true, much wider file proportions (which overlaps the
-	   nav links between roughly 1025-1140px). */
-	width:148px;
+	/* #main-menu-container is absolutely positioned over this same row
+	   and right-anchors its nav content ~763px from the viewport's
+	   right edge, so the logo only has (100vw - 808px) of guaranteed
+	   safe width before it reaches the nav links (808 = the row's own
+	   30px left offset + 763px nav width + a ~15px buffer). Scales up
+	   with the viewport instead of a single flat number, but never
+	   past the logo's true undistorted width at 80px tall (349px) -
+	   and never below the narrowest desktop width's safe minimum
+	   (217px, at the 1025px breakpoint right before mobile takes over). */
+	width: clamp(217px, calc(100vw - 808px), 349px);
 	z-index:1;
 }
-/* Matches the same ~1.85:1 ratio for the smaller 50px affixed desktop
-   logo (50 * 1.85 ≈ 92px) - without this, .logo-img's max-width:100%
-   would cap it against the wider 148px row above instead, rendering
-   it less compactly than the unscrolled state and making the ratio
-   visibly shift mid-transition while scrolling. */
+/* Same formula for the smaller 50px affixed logo - its true
+   undistorted width (~219px) fits inside the safe zone at every
+   desktop width, so this effectively never gets clamped down; kept
+   as a clamp() anyway for consistency and as a safety net. */
 @media (min-width: 1025px) {
   .affix .logo-row {
-    width: 92px;
+    width: clamp(180px, calc(100vw - 808px), 219px);
   }
 }
 .header-transporent-bg-black{
