@@ -3257,6 +3257,17 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   vertical-align: middle;
 }
 
+/* support.html's donation widget iframes are each a hardcoded 410px
+   wide, so by default (a plain block element) they sit flush against
+   the left edge of their Bootstrap column instead of centered, and
+   would overflow horizontally once the column stacks to less than
+   410px wide on phones. Centering + capping at the column's own
+   width fixes both. */
+.donation-embed {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 /***** BG VIDEO *****/
 .sm-video-wrapper{
   position: absolute;
