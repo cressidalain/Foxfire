@@ -482,13 +482,6 @@
 					var iframe = wrap.querySelector('.donation-embed');
 					if (!iframe) continue;
 
-					if (window.innerWidth > 767) {
-						iframe.style.transform = '';
-						wrap.style.width = '';
-						wrap.style.height = '';
-						continue;
-					}
-
 					wrap.style.width = '';
 					var scale = wrap.clientWidth / NATIVE_WIDTH;
 					if (scale > 1) scale = 1;
