@@ -245,7 +245,7 @@
 				
         <!-- STATIC MEDIA IMAGE -->
         <div class="sm-img-bg-fullscr parallax-section" style="background-image: url(images/static-media/sea-big.jpg)" data-stellar-background-ratio="0.5">
-          <div class="container sm-content-cont text-center js-height-fullscr">
+          <div class="container sm-content-cont-500 text-center">
 			  
             <div class="sm-cont-middle">
 
@@ -309,6 +309,7 @@
               <!-- Post Item 1 -->
               <div class="col-sm-6 col-md-6 col-lg-6 wow fadeIn pb-70" >
                   
+				<div class="donation-embed-wrap">
 				<iframe class="donation-embed"
 				  width="410"
 				  height="900"
@@ -317,12 +318,14 @@
 				  allowfullscreen
 				  style="width:410px; border-radius: 16px; box-shadow: 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.05), 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.05); border: none; display: block;"
 				></iframe>
-              
+				</div>
+
               </div>
               
               <!-- Post Item 2 -->
               <div class="col-sm-6 col-md-6 col-lg-6 wow fadeIn pb-70" data-wow-delay="200ms" >
                   
+				<div class="donation-embed-wrap">
 				<iframe class="donation-embed"
 				  width="410"
 				  height="900"
@@ -331,7 +334,8 @@
 				  allowfullscreen
 				  style="width:410px; border-radius: 16px; box-shadow: 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.05), 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.05); border: none; display: block;"
 				></iframe>
-              
+				</div>
+
               </div>
 			  </div>
               
@@ -339,6 +343,7 @@
 				<!-- Post Item 3 -->
               <div class="col-sm-6 col-md-6 col-lg-6 wow fadeIn pb-70" data-wow-delay="400ms" >
 				  
+				<div class="donation-embed-wrap">
 				<iframe class="donation-embed"
 				  width="410"
 				  height="900"
@@ -346,13 +351,15 @@
 				  frameborder="0"
 				  allowfullscreen
 				  style="width:410px; border-radius: 16px; box-shadow: 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.05), 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.05); border: none; display: block;"
-				></iframe>                  
-              
+				></iframe>
+				</div>
+
               </div>
 				
               <!-- Post Item 4 -->
               <div class="col-sm-6 col-md-6 col-lg-6 wow fadeIn pb-70" data-wow-delay="400ms" >
 				  
+				<div class="donation-embed-wrap">
 				<iframe class="donation-embed"
 				  width="410"
 				  height="900"
@@ -360,8 +367,9 @@
 				  frameborder="0"
 				  allowfullscreen
 				  style="width:410px; border-radius: 16px; box-shadow: 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.05), 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.05); border: none; display: block;"
-				></iframe>               
-              
+				></iframe>
+				</div>
+
               </div>              
             </div>
             
@@ -457,8 +465,47 @@
     
     <!-- MAIN SCRIPT -->
 		<script src="js/main.js"></script>
-		
-<!-- JS end -->	
-	
+
+<!-- JS end -->
+
+		<!-- Scales the donation widgets to fit narrow screens: see the
+		     comment above ".donation-embed-wrap" in style.css. -->
+		<script>
+		(function () {
+			var NATIVE_WIDTH = 410;
+			var NATIVE_HEIGHT = 900;
+
+			function scaleDonationEmbeds() {
+				var wraps = document.querySelectorAll('.donation-embed-wrap');
+				for (var i = 0; i < wraps.length; i++) {
+					var wrap = wraps[i];
+					var iframe = wrap.querySelector('.donation-embed');
+					if (!iframe) continue;
+
+					if (window.innerWidth > 767) {
+						iframe.style.transform = '';
+						wrap.style.width = '';
+						wrap.style.height = '';
+						continue;
+					}
+
+					wrap.style.width = '';
+					var scale = wrap.clientWidth / NATIVE_WIDTH;
+					if (scale > 1) scale = 1;
+					iframe.style.transform = 'scale(' + scale + ')';
+					wrap.style.width = Math.round(NATIVE_WIDTH * scale) + 'px';
+					wrap.style.height = Math.round(NATIVE_HEIGHT * scale) + 'px';
+				}
+			}
+
+			window.addEventListener('load', scaleDonationEmbeds);
+			var resizeTimer;
+			window.addEventListener('resize', function () {
+				clearTimeout(resizeTimer);
+				resizeTimer = setTimeout(scaleDonationEmbeds, 150);
+			});
+		})();
+		</script>
+
 	</body>
-</html>		
+</html>

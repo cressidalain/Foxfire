@@ -530,7 +530,7 @@ body {
 	/* Kept in sync with #main-menu .navbar .nav > li > a's padding-top
 	   above - same logo, same header, same math. */
 	padding:36px 3px 5px 3px;
-	margin: 0 0 25px 12px;
+	margin: 0 0 25px 5px;
 	color: var(--starlight);
 }
 
@@ -3267,6 +3267,23 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   max-width: 100%;
   margin: 0 auto;
 }
+/* Below 768px the column is narrower than the widget's native 410px
+   design, and the crowded.me embed doesn't reflow to fit a smaller
+   iframe - its own content gets cut off instead of wrapping. Rendering
+   it at native width and scaling the whole thing down (via JS in
+   support.html) keeps the widget's own layout intact instead of
+   relying on it to be responsive. */
+@media (max-width: 767px) {
+  .donation-embed-wrap {
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .donation-embed-wrap .donation-embed {
+    max-width: none;
+    width: 410px !important;
+    transform-origin: top left;
+  }
+}
 
 /***** BG VIDEO *****/
 .sm-video-wrapper{
@@ -3901,10 +3918,10 @@ select.input-border {
 	   width:200px/height:auto logo, so one shared value covers
 	   everything. */
 	padding:38px 3px 5px 3px;
-	margin: 0 12px 17px 12px;
+	margin: 0 5px 17px 5px;
 	border-bottom: 2px solid rgba(45,78,83,0);
 	color:var(--starlight);
-    letter-spacing:2px;
+    letter-spacing:1px;
   background-color: transparent;
 }
 .affix.header-1 #main-menu .navbar .nav > li > a {
@@ -3921,7 +3938,7 @@ select.input-border {
 }
 .header-1 #main-menu .navbar .nav > li.current > a {
 	padding:38px 3px 5px 3px;
-	margin: 0 12px 17px 12px;
+	margin: 0 5px 17px 5px;
 	border-bottom: 2px solid rgba(45,78,83,1);
 	color:var(--nightfall);
 }
